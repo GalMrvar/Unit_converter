@@ -1,0 +1,10 @@
+15:28:11:875	2fd0	Check and remove old log files...
+15:28:11:875	2fd0	args: 
+15:28:11:875	2fd0	
+15:28:11:884	2fd0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+15:28:11:884	2fd0	บ                Claymore's Dual GPU Miner - v11.5               บ
+15:28:11:884	2fd0	บ              ETH + DCR/SIA/LBC/PASC/BLAKE2S/KECCAK             บ
+15:28:11:884	2fd0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+15:28:11:884	2fd0	
+15:28:11:884	2fd0	b541 
+15:28:12:114	2fd0	ETH: No pools specified! Specify at least one valid pool in "-epool" parameter. 

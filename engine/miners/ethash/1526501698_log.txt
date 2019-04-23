@@ -1,0 +1,10 @@
+22:14:58:306	130c	Check and remove old log files...
+22:14:58:313	130c	args: 
+22:14:58:315	130c	
+22:14:58:317	130c	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+22:14:58:319	130c	บ                Claymore's Dual GPU Miner - v11.5               บ
+22:14:58:321	130c	บ              ETH + DCR/SIA/LBC/PASC/BLAKE2S/KECCAK             บ
+22:14:58:323	130c	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+22:14:58:325	130c	
+22:14:58:327	130c	b541 
+22:14:58:539	130c	ETH: No pools specified! Specify at least one valid pool in "-epool" parameter. 

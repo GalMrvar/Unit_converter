@@ -1,0 +1,10 @@
+15:28:10:694	39cc	Check and remove old log files...
+15:28:10:698	39cc	args: 
+15:28:10:698	39cc	
+15:28:10:698	39cc	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+15:28:10:698	39cc	บ                Claymore's Dual GPU Miner - v11.5               บ
+15:28:10:698	39cc	บ              ETH + DCR/SIA/LBC/PASC/BLAKE2S/KECCAK             บ
+15:28:10:698	39cc	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+15:28:10:698	39cc	
+15:28:10:698	39cc	b541 
+15:28:10:915	39cc	ETH: No pools specified! Specify at least one valid pool in "-epool" parameter. 

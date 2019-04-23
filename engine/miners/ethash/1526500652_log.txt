@@ -1,0 +1,10 @@
+21:57:32:717	242c	Check and remove old log files...
+21:57:32:719	242c	args: 
+21:57:32:720	242c	
+21:57:32:721	242c	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+21:57:32:721	242c	บ                Claymore's Dual GPU Miner - v11.5               บ
+21:57:32:722	242c	บ              ETH + DCR/SIA/LBC/PASC/BLAKE2S/KECCAK             บ
+21:57:32:723	242c	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+21:57:32:724	242c	
+21:57:32:724	242c	b541 
+21:57:32:926	242c	ETH: No pools specified! Specify at least one valid pool in "-epool" parameter. 

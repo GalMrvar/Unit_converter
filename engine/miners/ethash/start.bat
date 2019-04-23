@@ -1,0 +1,1 @@
+EthDcrMiner64.exe -epool us1.ethpool.org:3333 -ewal 0x70aF55bAd57099301c3D1509254eb36d4EF2B535.Odisity  -epsw x
