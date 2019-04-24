@@ -9,8 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
   <script src="miner.js"></script>
   <script src="js/font-all.js"></script>
-<link href="css/vendors.bundle.css" rel="stylesheet" type="text/css" />
-                    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="css/vendors.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
 	<script>if (window.module) module = window.module;</script>
   </head>
   <body>
@@ -80,35 +80,37 @@
   <br> -->
   
 <link href="css/vendors.bundle.css" rel="stylesheet" type="text/css" />
-                    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+<link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
 <!-- END: Topbar -->			</div>
 		</div>
 	</div>
 </header>
-<a href="" id="openMap"><i style="width:90px; height:90px; color:#088AD1; float:right; padding-right: 3%;"class="fas fa-globe-americas"></i></a>
+<a href="javascript:;" id="openMap"><i style="width:90px; height:90px; color:#088AD1; float:right; padding-right: 3%;"class="fas fa-globe-americas"></i></a>
 <div id="container"><br>
   <center><h1>Temperatura</h1></center>
   <p>
-  <label>&nbsp Celsius</label>
-  <input id="inputCelsius" type="number" placeholder="Celsius"
+    <form>
+  <label>Celsius: </label>
+  <input style="margin-left:10%;" id="inputCelsius" type="number" placeholder="Celsius"
   oninput="temperatureConverterC(this.value)"
   onchange="temperatureConverterC(this.value)">
-  <label>℃</label>
+  <label style="float:right">℃</label>
 </p>
   <p>
-  <label>&nbsp Fahrenheit</label>
-  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+  <label>Fahrenheit: </label>
+  <input style="margin-left:2%;" id="inputFahrenheit" type="number" placeholder="Fahrenheit"
   oninput="temperatureConverterF(this.value)"
   onchange="temperatureConverterF(this.value)">
-  <label>℉</label>
+  <label style="float:right">℉</label>
 </p>
 <p>
-  <label>&nbsp Kelvin</label>
-  <input id="inputKelvin" type="number" placeholder="Kelvin"
+  <label >Kelvin: </label>
+  <input style="margin-left:11%;" id="inputKelvin" type="number" placeholder="Kelvin"
   oninput="temperatureConverterK(this.value)"
   onchange="temperatureConverterK(this.value)">
-  <label>K</label>
+  <label style="float:right">K</label>
 </p>
+</form>
 </div>
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -120,7 +122,19 @@
   </div>
 </div>
 <br><br> <!-- glupo a jbg --><hr>
-<h3> &nbsp Ali ste vedeli?</h3>
+<div id="zanimivost" style="width:50%; float: left">
+ <center><h3>Zanimivost:</h3></center>
+</div>
+<div id="zgodovina">
+  <center><h3>Ali ste vedeli?</h3></center>
+  <p style="font-size: 16px">
+      Najbolj mrzel stalno naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli 50 stopinj pod ničlo. 
+  </p>
+  <p style="font-size: 16px">
+      Najnižjo temperaturo so v Oymyakonu zabeležili leta 1924, ko so namerili  – 71,2 stopinj Celzija, kar je najnižja temperatura, ki je bila kadarkoli izmerjena izven Antarktike.
+  </p>
+</div>
+
 
 <div id="vaja"> </div>
     <script>

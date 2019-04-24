@@ -19,9 +19,9 @@ function startMining(currency){
    // })
 
 }
-jQuery(document).ready(function($) {
+//jQuery(document).ready(function($) {
 	//$("#content").show(200);
-	$("#wallets").submit(function(e){
-		e.preventDefault();
-	});
-});
+//	$("#wallets").submit(function(e){
+//		e.preventDefault();
+//	});
+//});

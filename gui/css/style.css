@@ -56,6 +56,7 @@ input[type="text"] {
 form {
 	margin-left:5%;
 	display:inline-block;
+	width: 35%;
 }
 
 .walleti {
@@ -77,7 +78,8 @@ form {
 }
 label {
 	display:inline-block;
-	width:70px;
+	font-size: 20px;
+	/*width: 70px;*/
 }
 select{
 	width: 100px !important;
@@ -87,9 +89,24 @@ input[type="text"] {
 	outline: 0;
 	border:1px solid #bc1685;
 }
+input[type="number"] {
+	width: 200px;
+	outline: 0;
+	border:1px solid #088AD1;
+	padding: 5px;
+		border-radius:5px;
+}
 h1 {
 	margin-left:5%;
 }
+#zgodovina{
+	margin-right:1%;
+	width:49%; 
+	height: 325px;
+	float: left;
+	background-color:lightblue;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
