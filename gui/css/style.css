@@ -99,14 +99,18 @@ input[type="number"] {
 h1 {
 	margin-left:5%;
 }
+
 #zgodovina{
 	margin-right:1%;
 	width:49%; 
-	height: 325px;
+	height: 310px;
 	float: left;
 	background-color:lightblue;
 }
-
+#zanimivost{
+	height: 310px;
+	
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */

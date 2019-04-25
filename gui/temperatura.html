@@ -123,10 +123,12 @@
 </div>
 <br><br> <!-- glupo a jbg --><hr>
 <div id="zanimivost" style="width:50%; float: left">
- <center><h3>Zanimivost:</h3></center>
+ <center><h3 ><b id="title"></b></h3></center>
+ <center><h4 id="zanTitle"></h4></center>
+ <p id="zan" style="font-size: 16px; margin-left:1%;"> </p>
 </div>
 <div id="zgodovina">
-  <center><h3>Ali ste vedeli?</h3></center>
+  <center><h3><b>Ali ste vedeli?</b></h3></center>
   <p style="font-size: 16px">
       Najbolj mrzel stalno naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli 50 stopinj pod ničlo. 
   </p>
@@ -134,7 +136,6 @@
       Najnižjo temperaturo so v Oymyakonu zabeležili leta 1924, ko so namerili  – 71,2 stopinj Celzija, kar je najnižja temperatura, ki je bila kadarkoli izmerjena izven Antarktike.
   </p>
 </div>
-
 
 <div id="vaja"> </div>
     <script>
@@ -150,36 +151,75 @@
   document.getElementById("inputKelvin").value = "";
   document.getElementById("inputCelsius").value = "";
   }
-function temperatureConverterC(valNum){
-    if(valNum == ""){
-      valNull();
+	function temperatureConverterC(valNum){
+		if(valNum == ""){
+		  valNull();
+		}
+		else {
+			kelvin = (valNum*1)+(273.15);
+			document.getElementById("inputFahrenheit").value = (valNum*1.8)+32;
+			document.getElementById("inputKelvin").value = kelvin;
+			checkKelvin(kelvin);
+		}
+	}
+	function temperatureConverterF(valNum){
+		if(valNum == ""){
+			valNull();
+		}
+		else{
+      kelvin = ((valNum-32)/1.8)+273.15;
+			document.getElementById("inputCelsius").value = (valNum-32)/1.8;
+      document.getElementById("inputKelvin").value = kelvin
+      checkKelvin(kelvin);
+		}
+	}
+	function temperatureConverterK(valNum){
+		if(valNum == ""){
+		  valNull();
+		}
+		else{    
+		  document.getElementById("inputCelsius").value = (valNum*1)-273.15;
+		  var number = ((valNum-273.15)*1.8)+32;
+      document.getElementById("inputFahrenheit").value = number.toPrecision(4);
+      if(valNull != 0)
+        checkKelvin(valNum);
+		}
+	}
+	function checkKelvin(kelvin){
+		if(kelvin <= 0){
+			temperatureConverterK(0);
+      var paragraph = document.getElementById("zan");
+      var Maintitle = document.getElementById("title");
+      var title = document.getElementById("zanTitle");
+      if(title.innerHTML == "Absolutna ničla")
+        return;
+      if(Maintitle.innerHTML != "Zanimivost:")
+       Maintitle.innerHTML ="Zanimivost:";
+      var naslov = document.createTextNode("Absolutna ničla");
+      var text = document.createTextNode("Absolutna ničla (0 K) predstavlja -273,15 ℃");
+      title.innerHTML ="";
+      paragraph.innerHTML ="";
+      title.appendChild(naslov);
+      paragraph.appendChild(text);
     }
-    else {
-      document.getElementById("inputFahrenheit").value = (valNum*1.8)+32;
-      //document.getElementById("inputKelvin").value = valNum+273.15;
-      document.getElementById("inputKelvin").value = (valNum*1)+(273.15);
-    }
-  }
-  function temperatureConverterF(valNum){
-    if(valNum == ""){
-      valNull();
-    }
-    else{
-      document.getElementById("inputCelsius").value = (valNum-32)/1.8;
-      document.getElementById("inputKelvin").value = ((valNum-32)/1.8)+273.15;
-    }
-  }
-  function temperatureConverterK(valNum){
-    if(valNum == ""){
-      valNull();
-    }
-    else{
-      document.getElementById("inputCelsius").value = (valNum*1)-273.15;
-      var number = ((valNum-273.15)*1.8)+32;
-      document.getElementById("inputFahrenheit").value = number.toPrecision(4);;
-    }
-  }
+    if(kelvin > 360 && kelvin < 403 ){
+			temperatureConverterK(0);
+      var paragraph = document.getElementById("zan");
+      var title = document.getElementById("zanTitle");
+      var Maintitle = document.getElementById("title");
+      if(title.innerHTML == "Vrelišče vode")
+        return;
+      if(Maintitle.innerHTML != "Zanimivost:")
+        Maintitle.innerHTML ="Zanimivost:";
+      var naslov = document.createTextNode("Vrelišče vode");
+      var text = document.createTextNode("100 stopinj ℃ predstavlja vrelišče vode");
+      title.innerHTML ="";
+      paragraph.innerHTML ="";
+      title.appendChild(naslov);
+      paragraph.appendChild(text);
+		}
 
+	}
   ////MODAL
   // Get the modal
 var modal = document.getElementById('myModal');
