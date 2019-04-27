@@ -54,9 +54,9 @@ input[type="text"] {
 }
 
 form {
-	margin-left:5%;
+	/*margin-left:5%;
 	display:inline-block;
-	width: 35%;
+	width: 35%;*/
 }
 
 .walleti {
@@ -101,15 +101,16 @@ h1 {
 }
 
 #zgodovina{
-	margin-right:1%;
-	width:49%; 
-	height: 340px;
+	/*margin-right:1%;*/
+	width:50%; 
+	height: 320px;
 	float: left;
-	background-color:lightblue;
+	background-color:white;
 }
 #zanimivost{
 	width:49%; 
-	height: 340px;
+	height: 320px;
+	background-color:white;
 }
 /* The Modal (background) */
 .modal {
@@ -124,7 +125,21 @@ h1 {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+/*----------------------------------------*/
+.fa-water{
+	color:#088AD1;
+}
+.fa-sun{
+	color:rgb(233, 148, 20);
+}
+.fa-creative-commons-zero{
+	color:black;
+}
 
+
+* {
+	font-family: arial;
+}
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;

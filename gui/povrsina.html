@@ -94,9 +94,7 @@
         <label style="float:left" >Celsius: &nbsp</label>
         <input id="inputCelsius" type="number" placeholder="Celsius"
         oninput="temperatureConverterC(this.value)"
-        onchange="temperatureConverterC(this.value)">
-        <label>℃</label>
-        <br><br>
+        onchange="temperatureConverterC(this.value)"><br><br>
         <!--<center>
         <i style="color:rgb(233, 148, 20); width:25%; height:60%" class="fas fa-temperature-low"></i></center>  -->
         </div>
@@ -107,13 +105,11 @@
         <input  id="inputFahrenheit" type="number" placeholder="Fahrenheit"
         oninput="temperatureConverterF(this.value)"
         onchange="temperatureConverterF(this.value)">
-        <label>℉</label>
         <br><br>
         <label style="width:110px;">Kelvin: </label>
         <input  id="inputKelvin" type="number" placeholder="Fahrenheit"
         oninput="temperatureConverterK(this.value)"
         onchange="temperatureConverterK(this.value)">
-        <label>K</label>
       </div> 
 </div>
 </div>
@@ -167,6 +163,7 @@ document.getElementById("inputFahrenheit").value = "";
 document.getElementById("inputKelvin").value = "";
 document.getElementById("inputCelsius").value = "";
 }
+document.getElementById("zan_icon").classList.add("gdfdgdfdfgdfgdfg");
 function temperatureConverterC(valNum){
   if(valNum == ""){
     valNull();
