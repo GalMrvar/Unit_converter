@@ -210,10 +210,16 @@ function ConvertM(valNum){
     valNull();
   }
   else{
+    var cm = valNum*100;
     document.getElementById("inputKm").value = valNum/1000;
-    document.getElementById("inputCm").value = valNum*100;
+    document.getElementById("inputCm").value = cm;
     document.getElementById("inputMm").value = valNum*10;
     //checkKelvin(kelvin);
+    var inch = cm/2.54;
+    document.getElementById("inputMi").value = inch/63360;
+    document.getElementById("inputJa").value = inch/12/3;
+    document.getElementById("inputFt").value = inch/12;
+    document.getElementById("inputIn").value = inch;
   }
 }
 function ConvertCm(valNum){
@@ -221,9 +227,15 @@ function ConvertCm(valNum){
     valNull();
   }
   else{    
-    document.getElementById("inputKm").value = valNum/1000;
+    var cm = valNum;
+    document.getElementById("inputKm").value = valNum/1000*10;
     document.getElementById("inputM").value = valNum/100;
-    document.getElementById("inputMm").value = valNum*10;    
+    document.getElementById("inputMm").value = valNum*10;
+    var inch = cm/2.54;
+    document.getElementById("inputMi").value = inch/63360;
+    document.getElementById("inputJa").value = inch/12/3;
+    document.getElementById("inputFt").value = inch/12;
+    document.getElementById("inputIn").value = inch;    
   }
 }
 function ConvertMm(valNum){
@@ -231,9 +243,80 @@ function ConvertMm(valNum){
     valNull();
   }
   else{    
+    var cm = valNum/100;
     document.getElementById("inputKm").value = valNum/1000;
     document.getElementById("inputM").value = valNum/100;
-    document.getElementById("inputCm").value = valNum/10;    
+    document.getElementById("inputCm").value = valNum/10;   
+    var inch = cm/2.54;
+    document.getElementById("inputMi").value = inch/63360;
+    document.getElementById("inputJa").value = inch/12/3;
+    document.getElementById("inputFt").value = inch/12;
+    document.getElementById("inputIn").value = inch; 
+  }
+}
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function ConvertMi(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    inch = valNum*63360
+    document.getElementById("inputJa").value = valNum*1760;
+    document.getElementById("inputFt").value = valNum*5280;
+    document.getElementById("inputIn").value = inch ;
+    var cm = inch*2.54;
+    document.getElementById("inputKm").value = cm/(1000*100);
+    document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*10;
+  }
+}
+function ConvertJa(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    inch = valNum*36;   
+    document.getElementById("inputMi").value = valNum/1760;
+    document.getElementById("inputFt").value = valNum*3;
+    document.getElementById("inputIn").value = inch;
+    var cm = inch*2.54;
+    document.getElementById("inputKm").value = cm/(1000*100);
+    document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*10;    
+  }
+}
+function ConvertFt(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    inch = valNum*12;   
+    document.getElementById("inputMi").value = valNum/5280;
+    document.getElementById("inputJa").value = valNum/3;
+    document.getElementById("inputIn").value = inch;
+    var cm = inch*2.54;
+    document.getElementById("inputKm").value = cm/(1000*100);
+    document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*10;    
+  }
+}
+function ConvertIn(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    var inch = valNum;    
+    document.getElementById("inputMi").value = valNum/63360;
+    document.getElementById("inputJa").value = valNum/36;
+    document.getElementById("inputFt").value = valNum/12;
+    var cm = inch*2.54;
+    document.getElementById("inputKm").value = cm/(1000*100);
+    document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*10;    
   }
 }
 
