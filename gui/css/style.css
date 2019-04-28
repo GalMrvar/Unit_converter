@@ -139,7 +139,18 @@ h1 {
 	color:rgb(233, 148, 20);
 }
 
-
+.fa-mail-bulk{
+	color:rgb(233, 148, 20);
+}
+.fa-moon{
+	color:#088AD1;
+}
+.fa-building{
+	color:#088AD1;
+}
+.fa-creative-commons-zero{
+	color:#088AD1;
+}
 * {
 	font-family: arial;
 }

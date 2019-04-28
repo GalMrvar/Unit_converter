@@ -22,7 +22,7 @@
   <div class="m-stack__item m-brand  m-brand--skin-dark ">
     <div class="m-stack m-stack--ver m-stack--general">
       <div class="m-stack__item m-stack__item--middle m-brand__logo">
-        <h1 style="text-align:left; color:rgb(233, 148, 20);">Temperatura</h1>
+        <h1 style="text-align:left; color:rgb(233, 148, 20);">Površina</h1>
       </div>
       <div class="m-stack__item m-stack__item--middle m-brand__tools">
           <!-- END -->
@@ -86,30 +86,53 @@
 	</div>
 </header>
 <a href="javascript:;" id="openMap"><i style="width:90px; height:90px; color:#088AD1; float:right; padding-right: 3%;"class="fas fa-globe-americas"></i></a>
-<div class="container-fluid">
+<div style="height:50%;" class="container-fluid">
   <div class="row">
       <div class="col-sm-6">
         <br>
-        <h2>Osnovna enota v Sloveniji</h2><br>
-        <label style="float:left" >Celsius: &nbsp</label>
-        <input id="inputCelsius" type="number" placeholder="Celsius"
-        oninput="temperatureConverterC(this.value)"
-        onchange="temperatureConverterC(this.value)"><br><br>
+        <center><h2>Metrične enote (SI)</h2></center><br>
+        <label style="width:115px;" >Kilometer: &nbsp</label>
+        <input id="inputKm" type="number" placeholder="Kvadratni kilometer"
+        oninput="ConvertKm(this.value)"
+        onchange="ConvertKm(this.value)"><label  >&nbsp km&sup2</label><br>
+        <label style="width:115px;" >Meter: &nbsp</label>
+        <input id="inputM" type="number" placeholder="Kvadratni meter"
+        oninput="ConvertM(this.value)"
+        onchange="ConvertM(this.value)"><label  >&nbsp m&sup2</label><br>
+        <label style="width:115px;" >Decimeter: &nbsp</label>
+        <input id="inputDm" type="number" placeholder="Kvadratni decimeter"
+        oninput="ConvertDm(this.value)"
+        onchange="ConvertDm(this.value)"><label  >&nbsp dm&sup2</label><br>
+        <label style="width:115px;" >Centimeter: &nbsp</label>
+        <input id="inputCm" type="number" placeholder="Kvadratni centimeter"
+        oninput="ConvertCm(this.value)"
+        onchange="ConvertCm(this.value)"><label  >&nbsp cm&sup2</label><br>
+        <label style="width:115px;" >Milimeter: &nbsp</label>
+        <input id="inputMm" type="number" placeholder="Kvadratni milimeter"
+        oninput="ConvertMm(this.value)"
+        onchange="ConvertMm(this.value)"><label  >&nbsp mm&sup2</label><br>
         <!--<center>
         <i style="color:rgb(233, 148, 20); width:25%; height:60%" class="fas fa-temperature-low"></i></center>  -->
         </div>
       <div class="col-sm-6">
         <br>
-        <center> <h2>Ostale</h2></center><br>
-        <label style="width:110px;">Fahrenheit: </label>
-        <input  id="inputFahrenheit" type="number" placeholder="Fahrenheit"
-        oninput="temperatureConverterF(this.value)"
-        onchange="temperatureConverterF(this.value)">
-        <br><br>
-        <label style="width:110px;">Kelvin: </label>
-        <input  id="inputKelvin" type="number" placeholder="Fahrenheit"
-        oninput="temperatureConverterK(this.value)"
-        onchange="temperatureConverterK(this.value)">
+        <center> <h2>Imperialne enote</h2></center><br>
+        <label style="width:90px;" >Milja: &nbsp</label>
+        <input id="inputMi" type="number" placeholder="Kvadratna milja"
+        oninput="ConvertMi(this.value)"
+        onchange="ConvertMi(this.value)"><label  >&nbsp ml&sup2</label><br>
+        <label style="width:90px;" >Jard: &nbsp</label>
+        <input id="inputJa" type="number" placeholder="Kvadratni jard"
+        oninput="ConvertJa(this.value)"
+        onchange="ConvertJa(this.value)"><label  >&nbsp yd&sup2</label><br>
+        <label style="width:90px;" >Čevelj: &nbsp</label>
+        <input id="inputFt" type="number" placeholder="kvadratni čevelj"
+        oninput="ConvertFt(this.value)"
+        onchange="ConvertFt(this.value)"><label  >&nbsp ft&sup2</label><br>
+        <label style="width:90px;" >Palec: &nbsp</label>
+        <input id="inputIn" type="number" placeholder="Kvadratni palec"
+        oninput="ConvertIn(this.value)"
+        onchange="ConvertIn(this.value)"><label  >&nbsp in&sup2</label><br>
       </div> 
 </div>
 </div>
@@ -121,7 +144,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <img style="width:900px; height: 500px;"src="pictures/celsiusMap.png">
+    <img style="width:900px; height: 500px;"src="pictures/metricMap.png">
   </div>
 </div>
 
@@ -129,19 +152,19 @@
 <hr>
 <div id="zanimivost" style="width:50%; float: left;">
  <center><h3 ><b id="title">Zanimivost:</b></h3></center>
- <center><h4 id="zanTitle">Vrelišče vode</h4></center>
- <center><p id="zan" style="font-size: 16px; margin-left:1%;">100 stopinj ℃ predstavlja vrelišče vode</p></center>
- <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-water"></i></center>
+ <center><h4 id="zanTitle">Najvišja stavba na svetu</h4></center>
+ <center><p id="zan" style="font-size: 16px; margin-left:1%;">Površina najvišje stavbe na svetu (buri khalifa) je 334.000 m²</p></center>
+ <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-building"></i></center>
 </div>
 
 <div id="zgodovina">
 <div>
   <center><h3><b>Ali ste vedeli?</b></h3></center>
   <p id="pZgodovina" style="font-size: 16px; margin-left:1%">
-      Najbolj mrzel naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli -50℃. 
+    Povprečna velikost nogometnega igrišča v evropi je 7140m², kar predstavlja 105m dolžine in 68m širine. 
   </p>
 </div>
-  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/russian_flag.png"/></center>
+  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/igrisce.jpg"/></center>
 <div style="margin-bottom:0%">
   <a href="javascript:;" id="left" onclick="left()" ><i style="color: black; width: 40px; height: 40px; margin-left:2%" class="fas fa-chevron-circle-left"></i></a>
   <a href="javascript:;" id="right" onclick="right()" ><i style="color: black; width: 40px; height: 40px; margin-right:2%; float:right" class="fas fa-chevron-circle-right"></i></a>
@@ -159,79 +182,208 @@
 <script src="js/scripts.bundle.js" type="text/javascript"></script>
 <script>
 function valNull(){
-document.getElementById("inputFahrenheit").value = "";
-document.getElementById("inputKelvin").value = "";
-document.getElementById("inputCelsius").value = "";
+  document.getElementById("inputKm").value = "";
+  document.getElementById("inputM").value = "";
+  document.getElementById("inputDm").value = "";
+  document.getElementById("inputCm").value = "";
+  document.getElementById("inputMm").value = "";
+
+  document.getElementById("inputMi").value = "";
+  document.getElementById("inputJa").value = "";
+  document.getElementById("inputFt").value = "";
+  document.getElementById("inputIn").value = "";
 }
-document.getElementById("zan_icon").classList.add("gdfdgdfdfgdfgdfg");
-function temperatureConverterC(valNum){
+function ConvertKm(valNum){
   if(valNum == ""){
     valNull();
   }
   else {
-    kelvin = (valNum*1)+(273.15);
-    document.getElementById("inputFahrenheit").value = (valNum*1.8)+32;
-    document.getElementById("inputKelvin").value = kelvin;
-    checkKelvin(kelvin);
+    var cm = valNum*1000*100*1000*100;
+    document.getElementById("inputM").value =  valNum*1000*1000;
+    document.getElementById("inputDm").value = valNum*1000*100*1000;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = valNum*1000*100*10*1000*100*10;
+    var inch = cm/6.4516;
+    document.getElementById("inputMi").value = inch/63360**2;
+    document.getElementById("inputJa").value = inch/((12*3)**2);
+    document.getElementById("inputFt").value = inch/(12**2);
+    document.getElementById("inputIn").value = inch;
+    checkCm(cm); 
+    //checkKelvin(kelvin);
   }
 }
-function temperatureConverterF(valNum){
+function ConvertM(valNum){
   if(valNum == ""){
     valNull();
   }
   else{
-    kelvin = ((valNum-32)/1.8)+273.15;
-    document.getElementById("inputCelsius").value = (valNum-32)/1.8;
-    document.getElementById("inputKelvin").value = kelvin
-    checkKelvin(kelvin);
+    var cm = valNum*100**2;
+    document.getElementById("inputKm").value = valNum/1000**2;
+    document.getElementById("inputDm").value = valNum*10**2;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = valNum*100*10**2;
+    //checkKelvin(kelvin);
+    var inch = cm/6.4516;
+    document.getElementById("inputMi").value = inch/63360**2;
+    document.getElementById("inputJa").value = inch/((12*3)**2);
+    document.getElementById("inputFt").value = inch/(12**2);
+    document.getElementById("inputIn").value = inch;
+    checkCm(cm); 
   }
 }
-function temperatureConverterK(valNum){
+function ConvertDm(valNum){
+  if(valNum == ""){
+    valNull();
+  }
+  else{
+    var cm = valNum*10**2;
+    document.getElementById("inputKm").value = valNum/(10*1000)**2;
+    document.getElementById("inputM").value = valNum/10**2;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = valNum*(10*10**2);
+    //checkKelvin(kelvin);
+    var inch = cm/6.4516;
+    document.getElementById("inputMi").value = inch/63360**2;
+    document.getElementById("inputJa").value = inch/((12*3)**2);
+    document.getElementById("inputFt").value = inch/(12**2);
+    document.getElementById("inputIn").value = inch;
+    checkCm(cm); 
+  }
+}
+function ConvertCm(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else if(valNum == "abc"){
+    document.getElementById("inputKm").value = 0;
+    document.getElementById("inputM").value = 0;
+    document.getElementById("inputDm").value = 0;
+    document.getElementById("inputCm").value = 0;
+    document.getElementById("inputMm").value = 0;
+    var inch = cm/2.54;
+    document.getElementById("inputMi").value = 0;
+    document.getElementById("inputJa").value = 0;
+    document.getElementById("inputFt").value = 0;
+    document.getElementById("inputIn").value = 0;
+  }
+  else{    
+    var cm = valNum;
+    document.getElementById("inputKm").value = valNum/(1000*100**2);
+    document.getElementById("inputM").value = valNum/100**2;
+    document.getElementById("inputDm").value = valNum/10**2;
+    document.getElementById("inputMm").value = valNum*10**2;
+    var inch = cm/6.4516;
+    document.getElementById("inputMi").value = inch/63360**2;
+    document.getElementById("inputJa").value = inch/((12*3)**2);
+    document.getElementById("inputFt").value = inch/(12**2);
+    document.getElementById("inputIn").value = inch;
+    if(cm != 0)
+      checkCm(cm);    
+  }
+}
+function ConvertMm(valNum){
   if(valNum === "" ){
     valNull();
   }
   else{    
-    document.getElementById("inputCelsius").value = (valNum*1)-273.15;
-    var number = ((valNum-273.15)*1.8)+32;
-    document.getElementById("inputFahrenheit").value = number.toPrecision(4);
-    if(valNull != 0)
-      checkKelvin(valNum);
+    var cm = valNum/10**2;
+    document.getElementById("inputKm").value = valNum/(1000000**2);
+    document.getElementById("inputM").value = valNum/(100*10*10*10*10);
+    document.getElementById("inputDm").value = valNum/(10*10**2);
+    document.getElementById("inputCm").value = cm;   
+    var inch = cm/6.4516;
+    document.getElementById("inputMi").value = inch/63360**2;
+    document.getElementById("inputJa").value = inch/((12*3)**2);
+    document.getElementById("inputFt").value = inch/(12**2);
+    document.getElementById("inputIn").value = inch;
   }
 }
-function checkKelvin(kelvin){
-  if(kelvin <= 0){
-    temperatureConverterK(1234);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function ConvertMi(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    inch = valNum*(63360**2)
+    document.getElementById("inputJa").value = valNum*(1760**2);
+    document.getElementById("inputFt").value = valNum*(5280**2);
+    document.getElementById("inputIn").value = inch;
+    var cm = inch*6.4516;
+    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
+    document.getElementById("inputM").value = cm/(100*100);
+    document.getElementById("inputDm").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*100;
+    checkCm(cm); 
+  }
+}
+function ConvertJa(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    inch = valNum*36**2;   
+    document.getElementById("inputMi").value = valNum/1760**2;
+    document.getElementById("inputFt").value = valNum*3**2;
+    document.getElementById("inputIn").value = inch;
+    var cm = inch*6.4516;
+    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
+    document.getElementById("inputM").value = cm/(100*100);
+    document.getElementById("inputDm").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*100;
+    checkCm(cm);   
+  }
+}
+function ConvertFt(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    inch = valNum*144;   
+    document.getElementById("inputMi").value = valNum/(5280**2);
+    document.getElementById("inputJa").value = valNum/3**2;
+    document.getElementById("inputIn").value = inch;
+    var cm = inch*6.4516;
+    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
+    document.getElementById("inputM").value = cm/(100*100);
+    document.getElementById("inputDm").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*100;
+    checkCm(cm);     
+  }
+}
+function ConvertIn(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    var inch = valNum;    
+    document.getElementById("inputMi").value = valNum/63360**2;
+    document.getElementById("inputJa").value = valNum/36**2;
+    document.getElementById("inputFt").value = valNum/12**2;
+    var cm = inch*6.4516;
+    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
+    document.getElementById("inputM").value = cm/(100*100);
+    document.getElementById("inputDm").value = cm/100;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = cm*100;
+    checkCm(cm);    
+  }
+}
+
+function checkCm(cm){
+  if(cm <= 0){
+    ConvertCm("abc");
     var paragraph = document.getElementById("zan");
     var Maintitle = document.getElementById("title");
     var title = document.getElementById("zanTitle");
-    if(title.innerHTML == "Absolutna ničla")
+    if(title.innerHTML == "Velikost znamke")
       return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Absolutna ničla");
-    var text = document.createTextNode("Absolutna ničla (0 K) predstavlja -273,15 ℃");
-    title.innerHTML ="";
-    paragraph.innerHTML ="";
-    title.appendChild(naslov);
-    paragraph.appendChild(text);
-    var c = document.getElementById("zan_icon").classList
-    c.forEach(function(element) {
-      document.getElementById("zan_icon").classList.remove(element);
-    });
-    document.getElementById("zan_icon").classList.add("fab");
-    document.getElementById("zan_icon").classList.add("fa-creative-commons-zero");
-  }
-  if(kelvin > 360 && kelvin < 403 ){
-    //temperatureConverterK(0);
-    var paragraph = document.getElementById("zan");
-    var title = document.getElementById("zanTitle");
-    var Maintitle = document.getElementById("title");
-    //if(title.innerHTML == "Vrelišče vode")
-    // return;
-    if(Maintitle.innerHTML != "Zanimivost:")
-      Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Vrelišče vode");
-    var text = document.createTextNode("100 stopinj ℃ predstavlja vrelišče vode");
+    var naslov = document.createTextNode("Velikost znamke");
+    var text = document.createTextNode("Dimenzija poštne znamke v sloveniji je 42 x 35 mm");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -241,18 +393,19 @@ function checkKelvin(kelvin){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-water");
+    document.getElementById("zan_icon").classList.add("fa-mail-bulk");
   }
-  if(kelvin >= 5000 ){
+  var meter = cm/100/100;
+  if(meter > 300000 && meter < 500000){
     var paragraph = document.getElementById("zan");
     var title = document.getElementById("zanTitle");
     var Maintitle = document.getElementById("title");
-    //if(title.innerHTML == "Vrelišče vode")
-    // return;
+    if(title.innerHTML == "Najvišja stavba na svetu")
+     return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Temperatura sonca");
-    var text = document.createTextNode("Temperatura sonca je 5778K oz. približno 5504℃");
+    var naslov = document.createTextNode("Najvišja stavba na svetu");
+    var text = document.createTextNode("Površina najvišje stavbe na svetu (buri khalifa) je 334.000 m²");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -262,16 +415,38 @@ function checkKelvin(kelvin){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-sun");
+    document.getElementById("zan_icon").classList.add("fa-building");
+  }
+  var km = cm/100/1000/1000/100;
+  if(km >= 3478 ){
+    var paragraph = document.getElementById("zan");
+    var title = document.getElementById("zanTitle");
+    var Maintitle = document.getElementById("title");
+    if(title.innerHTML == "Površina zemlje")
+      return;
+    if(Maintitle.innerHTML != "Zanimivost:")
+      Maintitle.innerHTML ="Zanimivost:";
+    var naslov = document.createTextNode("Površina zemlje");
+    var text = document.createTextNode("Površina planeta zemlja znaša 510.100.000 km²");
+    title.innerHTML ="";
+    paragraph.innerHTML ="";
+    title.appendChild(naslov);
+    paragraph.appendChild(text);
+    var c = document.getElementById("zan_icon").classList
+    c.forEach(function(element) {
+      document.getElementById("zan_icon").classList.remove(element);
+    });
+    document.getElementById("zan_icon").classList.add("fas");
+    document.getElementById("zan_icon").classList.add("fa-globe-americas");
   }
 }
 //Najbolj mrzel stalno naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli 50 stopinj pod ničlo.
-var vsebina_zanimivosti = ["Najbolj mrzel naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli -50℃.",
-"2.73 Kelvina je najnižja temperatura v celotnem vesolju in predstavlja približno - 270 ℃",
-"Kolikor nam je znano temperature v vesolju segajo od 3,500,000,000 Kelvina do 2,73 Kelvina"];
-var vsebina_slike = ["pictures/russian_flag.png",
-"pictures/snezinka.jpg",
-"pictures/space.jpg"];
+var vsebina_zanimivosti = ["Površina Slovenije je 20,273km² in spada med najmanjše države v Evropi.",
+"Povprečna velikost nogometnega igrišča v evropi je 7140m², kar predstavlja 105m dolžine in 68m širine.",
+"Tihi oz. Pacifiški ocean je največji ocean na svetu in pokriva približno 155km² našega planeta."];
+var vsebina_slike = ["pictures/slovenija.png",
+"pictures/igrisce.jpg",
+"pictures/pacific.jpg"];
 var pozicija = 0;
 function left(){
   if(pozicija == 0)

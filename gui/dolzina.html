@@ -91,23 +91,23 @@
       <div class="col-sm-6">
         <br>
         <center><h2>Metrične enote (SI)</h2></center><br>
-        <label style="width:110px;" >Kilometer &nbsp</label>
+        <label style="width:115px;" >Kilometer: &nbsp</label>
         <input id="inputKm" type="number" placeholder="Kilometer"
         oninput="ConvertKm(this.value)"
         onchange="ConvertKm(this.value)"><label  >&nbsp km</label><br>
-        <label style="width:110px;" >Meter &nbsp</label>
+        <label style="width:115px;" >Meter: &nbsp</label>
         <input id="inputM" type="number" placeholder="Meter"
         oninput="ConvertM(this.value)"
         onchange="ConvertM(this.value)"><label  >&nbsp m</label><br>
-        <label style="width:110px;" >Decimeter &nbsp</label>
+        <label style="width:115px;" >Decimeter: &nbsp</label>
         <input id="inputDm" type="number" placeholder="Decimeter"
         oninput="ConvertDm(this.value)"
         onchange="ConvertDm(this.value)"><label  >&nbsp dm</label><br>
-        <label style="width:110px;" >Centimeter &nbsp</label>
+        <label style="width:115px;" >Centimeter: &nbsp</label>
         <input id="inputCm" type="number" placeholder="Centimeter"
         oninput="ConvertCm(this.value)"
         onchange="ConvertCm(this.value)"><label  >&nbsp cm</label><br>
-        <label style="width:110px;" >Milimeter &nbsp</label>
+        <label style="width:115px;" >Milimeter: &nbsp</label>
         <input id="inputMm" type="number" placeholder="Milimeter"
         oninput="ConvertMm(this.value)"
         onchange="ConvertMm(this.value)"><label  >&nbsp mm</label><br>
@@ -117,19 +117,19 @@
       <div class="col-sm-6">
         <br>
         <center> <h2>Imperialne enote</h2></center><br>
-        <label style="width:90px;" >Milja &nbsp</label>
-        <input id="inputMi" type="number" placeholder="Mile"
+        <label style="width:90px;" >Milja: &nbsp</label>
+        <input id="inputMi" type="number" placeholder="Milja"
         oninput="ConvertMi(this.value)"
         onchange="ConvertMi(this.value)"><label  >&nbsp ml</label><br>
-        <label style="width:90px;" >Jard &nbsp</label>
-        <input id="inputJa" type="number" placeholder="Yard"
+        <label style="width:90px;" >Jard: &nbsp</label>
+        <input id="inputJa" type="number" placeholder="Jard"
         oninput="ConvertJa(this.value)"
         onchange="ConvertJa(this.value)"><label  >&nbsp yd</label><br>
-        <label style="width:90px;" >Čevelj &nbsp</label>
+        <label style="width:90px;" >Čevelj: &nbsp</label>
         <input id="inputFt" type="number" placeholder="Čevelj"
         oninput="ConvertFt(this.value)"
         onchange="ConvertFt(this.value)"><label  >&nbsp ft</label><br>
-        <label style="width:90px;" >Palec &nbsp</label>
+        <label style="width:90px;" >Palec: &nbsp</label>
         <input id="inputIn" type="number" placeholder="Palec"
         oninput="ConvertIn(this.value)"
         onchange="ConvertIn(this.value)"><label  >&nbsp in</label><br>
@@ -153,7 +153,7 @@
 <div id="zanimivost" style="width:50%; float: left;">
  <center><h3 ><b id="title">Zanimivost:</b></h3></center>
  <center><h4 id="zanTitle">Slovenska obala</h4></center>
- <center><p id="zan" style="font-size: 16px; margin-left:1%;">Dolžina slovenske obale je 43.157m.</p></center>
+ <center><p id="zan" style="font-size: 16px; margin-left:1%;">Dolžina slovenske obale je 43,157m.</p></center>
  <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-umbrella-beach"></i></center>
 </div>
 
@@ -287,8 +287,8 @@ function ConvertMm(valNum){
   }
   else{    
     var cm = valNum/10;
-    document.getElementById("inputKm").value = valNum/1000;
-    document.getElementById("inputM").value = valNum/100;
+    document.getElementById("inputKm").value = valNum/10/100/1000;
+    document.getElementById("inputM").value = valNum/100/10;
     document.getElementById("inputDm").value = valNum/10/10;
     document.getElementById("inputCm").value = cm;   
     var inch = cm/2.54;
@@ -405,7 +405,7 @@ function checkCm(cm){
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
     var naslov = document.createTextNode("Slovenska obala");
-    var text = document.createTextNode("Dolžina slovenske obale je 43.157m.");
+    var text = document.createTextNode("Dolžina slovenske obale je 43,157m.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
