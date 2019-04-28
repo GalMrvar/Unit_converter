@@ -91,7 +91,7 @@
       <div class="col-sm-6">
         <br>
         <h2>Osnovna enota v Sloveniji</h2><br>
-        <label style="float:left" >Celsius: &nbsp</label>
+        <label style="float:left" >Celzij: &nbsp</label>
         <input id="inputCelsius" type="number" placeholder="Celsius"
         oninput="temperatureConverterC(this.value)"
         onchange="temperatureConverterC(this.value)">
@@ -110,7 +110,7 @@
         <label>℉</label>
         <br><br>
         <label style="width:110px;">Kelvin: </label>
-        <input  id="inputKelvin" type="number" placeholder="Fahrenheit"
+        <input  id="inputKelvin" type="number" placeholder="Kelvin"
         oninput="temperatureConverterK(this.value)"
         onchange="temperatureConverterK(this.value)">
         <label>K</label>
@@ -193,17 +193,21 @@ function temperatureConverterK(valNum){
   if(valNum === "" ){
     valNull();
   }
+  else if(valNum == "abc"){    
+    document.getElementById("inputCelsius").value = 0;
+    document.getElementById("inputFahrenheit").value = 0;
+    document.getElementById("inputKelvin").value = 0;
+  }
   else{    
     document.getElementById("inputCelsius").value = (valNum*1)-273.15;
     var number = ((valNum-273.15)*1.8)+32;
     document.getElementById("inputFahrenheit").value = number.toPrecision(4);
-    if(valNull != 0)
-      checkKelvin(valNum);
+    checkKelvin(valNum);
   }
 }
 function checkKelvin(kelvin){
   if(kelvin <= 0){
-    temperatureConverterK(1234);
+    temperatureConverterK("abc");
     var paragraph = document.getElementById("zan");
     var Maintitle = document.getElementById("title");
     var title = document.getElementById("zanTitle");

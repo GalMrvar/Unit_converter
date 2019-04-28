@@ -99,6 +99,10 @@
         <input id="inputM" type="number" placeholder="Meter"
         oninput="ConvertM(this.value)"
         onchange="ConvertM(this.value)"><label  >&nbsp m</label><br>
+        <label style="width:110px;" >Decimeter &nbsp</label>
+        <input id="inputDm" type="number" placeholder="Decimeter"
+        oninput="ConvertDm(this.value)"
+        onchange="ConvertDm(this.value)"><label  >&nbsp dm</label><br>
         <label style="width:110px;" >Centimeter &nbsp</label>
         <input id="inputCm" type="number" placeholder="Centimeter"
         oninput="ConvertCm(this.value)"
@@ -148,19 +152,19 @@
 <hr>
 <div id="zanimivost" style="width:50%; float: left;">
  <center><h3 ><b id="title">Zanimivost:</b></h3></center>
- <center><h4 id="zanTitle">Vrelišče vode</h4></center>
- <center><p id="zan" style="font-size: 16px; margin-left:1%;">100 stopinj ℃ predstavlja vrelišče vode</p></center>
- <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-water"></i></center>
+ <center><h4 id="zanTitle">Slovenska obala</h4></center>
+ <center><p id="zan" style="font-size: 16px; margin-left:1%;">Dolžina slovenske obale je 43.157m.</p></center>
+ <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-umbrella-beach"></i></center>
 </div>
 
 <div id="zgodovina">
 <div>
   <center><h3><b>Ali ste vedeli?</b></h3></center>
   <p id="pZgodovina" style="font-size: 16px; margin-left:1%">
-      Najbolj mrzel naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli -50℃. 
+    Kitajski zid, ki je spada na seznam svetovnih čudes meri 21,196km. 
   </p>
 </div>
-  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/russian_flag.png"/></center>
+  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/Kzid.jpg"/></center>
 <div style="margin-bottom:0%">
   <a href="javascript:;" id="left" onclick="left()" ><i style="color: black; width: 40px; height: 40px; margin-left:2%" class="fas fa-chevron-circle-left"></i></a>
   <a href="javascript:;" id="right" onclick="right()" ><i style="color: black; width: 40px; height: 40px; margin-right:2%; float:right" class="fas fa-chevron-circle-right"></i></a>
@@ -180,6 +184,7 @@
 function valNull(){
   document.getElementById("inputKm").value = "";
   document.getElementById("inputM").value = "";
+  document.getElementById("inputDm").value = "";
   document.getElementById("inputCm").value = "";
   document.getElementById("inputMm").value = "";
 
@@ -195,6 +200,7 @@ function ConvertKm(valNum){
   else {
     var cm = valNum*1000*100;
     document.getElementById("inputM").value = valNum*1000;
+    document.getElementById("inputDm").value = valNum*1000*10;
     document.getElementById("inputCm").value = cm;
     document.getElementById("inputMm").value = valNum*1000*100*10;
     var inch = cm/2.54;
@@ -202,6 +208,7 @@ function ConvertKm(valNum){
     document.getElementById("inputJa").value = inch/12/3;
     document.getElementById("inputFt").value = inch/12;
     document.getElementById("inputIn").value = inch;
+    checkCm(cm); 
     //checkKelvin(kelvin);
   }
 }
@@ -212,30 +219,66 @@ function ConvertM(valNum){
   else{
     var cm = valNum*100;
     document.getElementById("inputKm").value = valNum/1000;
+    document.getElementById("inputDm").value = valNum*10;
     document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*10;
+    document.getElementById("inputMm").value = valNum*100*10;
     //checkKelvin(kelvin);
     var inch = cm/2.54;
     document.getElementById("inputMi").value = inch/63360;
     document.getElementById("inputJa").value = inch/12/3;
     document.getElementById("inputFt").value = inch/12;
     document.getElementById("inputIn").value = inch;
+    checkCm(cm); 
+  }
+}
+function ConvertDm(valNum){
+  if(valNum == ""){
+    valNull();
+  }
+  else{
+    var cm = valNum*10;
+    document.getElementById("inputKm").value = valNum/10/1000;
+    document.getElementById("inputM").value = valNum/10;
+    document.getElementById("inputCm").value = cm;
+    document.getElementById("inputMm").value = valNum*10*10;
+    //checkKelvin(kelvin);
+    var inch = cm/2.54;
+    document.getElementById("inputMi").value = inch/63360;
+    document.getElementById("inputJa").value = inch/12/3;
+    document.getElementById("inputFt").value = inch/12;
+    document.getElementById("inputIn").value = inch;
+    checkCm(cm); 
   }
 }
 function ConvertCm(valNum){
   if(valNum === "" ){
     valNull();
   }
+  else if(valNum == "abc"){
+    document.getElementById("inputKm").value = 0;
+    document.getElementById("inputM").value = 0;
+    document.getElementById("inputDm").value = 0;
+    document.getElementById("inputCm").value = 0;
+    document.getElementById("inputMm").value = 0;
+    var inch = cm/2.54;
+    document.getElementById("inputMi").value = 0;
+    document.getElementById("inputJa").value = 0;
+    document.getElementById("inputFt").value = 0;
+    document.getElementById("inputIn").value = 0;
+  }
   else{    
     var cm = valNum;
-    document.getElementById("inputKm").value = valNum/1000*10;
+    document.getElementById("inputKm").value = valNum/1000/100;
     document.getElementById("inputM").value = valNum/100;
+    document.getElementById("inputDm").value = valNum/10;
     document.getElementById("inputMm").value = valNum*10;
     var inch = cm/2.54;
     document.getElementById("inputMi").value = inch/63360;
     document.getElementById("inputJa").value = inch/12/3;
     document.getElementById("inputFt").value = inch/12;
-    document.getElementById("inputIn").value = inch;    
+    document.getElementById("inputIn").value = inch;
+    if(cm != 0)
+      checkCm(cm);    
   }
 }
 function ConvertMm(valNum){
@@ -243,10 +286,11 @@ function ConvertMm(valNum){
     valNull();
   }
   else{    
-    var cm = valNum/100;
+    var cm = valNum/10;
     document.getElementById("inputKm").value = valNum/1000;
     document.getElementById("inputM").value = valNum/100;
-    document.getElementById("inputCm").value = valNum/10;   
+    document.getElementById("inputDm").value = valNum/10/10;
+    document.getElementById("inputCm").value = cm;   
     var inch = cm/2.54;
     document.getElementById("inputMi").value = inch/63360;
     document.getElementById("inputJa").value = inch/12/3;
@@ -267,8 +311,10 @@ function ConvertMi(valNum){
     var cm = inch*2.54;
     document.getElementById("inputKm").value = cm/(1000*100);
     document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputDm").value = cm/10;
     document.getElementById("inputCm").value = cm;
     document.getElementById("inputMm").value = cm*10;
+    checkCm(cm); 
   }
 }
 function ConvertJa(valNum){
@@ -283,8 +329,10 @@ function ConvertJa(valNum){
     var cm = inch*2.54;
     document.getElementById("inputKm").value = cm/(1000*100);
     document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputDm").value = cm/10;
     document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10;    
+    document.getElementById("inputMm").value = cm*10; 
+    checkCm(cm);    
   }
 }
 function ConvertFt(valNum){
@@ -299,8 +347,10 @@ function ConvertFt(valNum){
     var cm = inch*2.54;
     document.getElementById("inputKm").value = cm/(1000*100);
     document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputDm").value = cm/10;
     document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10;    
+    document.getElementById("inputMm").value = cm*10;
+    checkCm(cm);     
   }
 }
 function ConvertIn(valNum){
@@ -315,45 +365,25 @@ function ConvertIn(valNum){
     var cm = inch*2.54;
     document.getElementById("inputKm").value = cm/(1000*100);
     document.getElementById("inputM").value = cm/100;
+    document.getElementById("inputDm").value = cm/10;
     document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10;    
+    document.getElementById("inputMm").value = cm*10;
+    checkCm(cm);     
   }
 }
 
-function checkKelvin(kelvin){
-  if(kelvin <= 0){
-    temperatureConverterK(1234);
+function checkCm(cm){
+  if(cm <= 0){
+    ConvertCm("abc");
     var paragraph = document.getElementById("zan");
     var Maintitle = document.getElementById("title");
     var title = document.getElementById("zanTitle");
-    if(title.innerHTML == "Absolutna ničla")
+    if(title.innerHTML == "Najmanjši delec")
       return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Absolutna ničla");
-    var text = document.createTextNode("Absolutna ničla (0 K) predstavlja -273,15 ℃");
-    title.innerHTML ="";
-    paragraph.innerHTML ="";
-    title.appendChild(naslov);
-    paragraph.appendChild(text);
-    var c = document.getElementById("zan_icon").classList
-    c.forEach(function(element) {
-      document.getElementById("zan_icon").classList.remove(element);
-    });
-    document.getElementById("zan_icon").classList.add("fab");
-    document.getElementById("zan_icon").classList.add("fa-creative-commons-zero");
-  }
-  if(kelvin > 360 && kelvin < 403 ){
-    //temperatureConverterK(0);
-    var paragraph = document.getElementById("zan");
-    var title = document.getElementById("zanTitle");
-    var Maintitle = document.getElementById("title");
-    //if(title.innerHTML == "Vrelišče vode")
-    // return;
-    if(Maintitle.innerHTML != "Zanimivost:")
-      Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Vrelišče vode");
-    var text = document.createTextNode("100 stopinj ℃ predstavlja vrelišče vode");
+    var naslov = document.createTextNode("Najmanjši delec");
+    var text = document.createTextNode("Najmanjši delec v vesolju je atom.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -363,18 +393,19 @@ function checkKelvin(kelvin){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-water");
+    document.getElementById("zan_icon").classList.add("fa-atom");
   }
-  if(kelvin >= 5000 ){
+  var meter = cm/100;
+  if(meter > 30000 && meter < 50000){
     var paragraph = document.getElementById("zan");
     var title = document.getElementById("zanTitle");
     var Maintitle = document.getElementById("title");
-    //if(title.innerHTML == "Vrelišče vode")
-    // return;
+    if(title.innerHTML == "Slovenska obala")
+     return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Temperatura sonca");
-    var text = document.createTextNode("Temperatura sonca je 5778K oz. približno 5504℃");
+    var naslov = document.createTextNode("Slovenska obala");
+    var text = document.createTextNode("Dolžina slovenske obale je 43.157m.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -384,16 +415,38 @@ function checkKelvin(kelvin){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-sun");
+    document.getElementById("zan_icon").classList.add("fa-umbrella-beach");
+  }
+  var km = cm/100/1000;
+  if(km >= 3478 ){
+    var paragraph = document.getElementById("zan");
+    var title = document.getElementById("zanTitle");
+    var Maintitle = document.getElementById("title");
+    if(title.innerHTML == "Premer lune")
+      return;
+    if(Maintitle.innerHTML != "Zanimivost:")
+      Maintitle.innerHTML ="Zanimivost:";
+    var naslov = document.createTextNode("Premer lune");
+    var text = document.createTextNode("Premer lune znaša 3476km.");
+    title.innerHTML ="";
+    paragraph.innerHTML ="";
+    title.appendChild(naslov);
+    paragraph.appendChild(text);
+    var c = document.getElementById("zan_icon").classList
+    c.forEach(function(element) {
+      document.getElementById("zan_icon").classList.remove(element);
+    });
+    document.getElementById("zan_icon").classList.add("far");
+    document.getElementById("zan_icon").classList.add("fa-moon");
   }
 }
 //Najbolj mrzel stalno naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli 50 stopinj pod ničlo.
-var vsebina_zanimivosti = ["Najbolj mrzel naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli -50℃.",
-"2.73 Kelvina je najnižja temperatura v celotnem vesolju in predstavlja približno - 270 ℃",
-"Kolikor nam je znano temperature v vesolju segajo od 3,500,000,000 Kelvina do 2,73 Kelvina"];
-var vsebina_slike = ["pictures/russian_flag.png",
-"pictures/snezinka.jpg",
-"pictures/space.jpg"];
+var vsebina_zanimivosti = ["Kitajski zid, ki je spada na seznam svetovnih čudes meri 21,196km.",
+"Človesko telo vsebuje 96000 km žil, kar pomeni da bi jih okoli zemlje ovili kar 2x.",
+"Povprečen človek v življenju prehodi razdaljo, ki je enaka kot, če bi prehodil 2x okoli sveta."];
+var vsebina_slike = ["pictures/Kzid.jpg",
+"pictures/zila.png",
+"pictures/world.jpg"];
 var pozicija = 0;
 function left(){
   if(pozicija == 0)
