@@ -10,7 +10,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 950, height: 750,icon: 'pictures/logo.png', resizable: false})
 
   // and load the index.html of the app.
-  mainWindow.loadFile('temperatura.html')
+  mainWindow.loadFile('dolzina.html')
   //mainWindow.setMenu(null)
 
   // Open the DevTools.

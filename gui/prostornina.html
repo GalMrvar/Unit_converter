@@ -154,19 +154,19 @@
 <hr>
 <div id="zanimivost" style="width:50%; float: left;">
  <center><h3 ><b id="title">Zanimivost:</b></h3></center>
- <center><h4 id="zanTitle">Najvišja stavba na svetu</h4></center>
- <center><p id="zan" style="font-size: 16px; margin-left:1%;">Površina najvišje stavbe na svetu (buri khalifa) je 334.000 m²</p></center>
- <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-building"></i></center>
+ <center><h4 id="zanTitle">Kapljice vode</h4></center>
+ <center><p id="zan" style="font-size: 16px; margin-left:1%;">200ml vode vsebuje 5000 kapljic.</p></center>
+ <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-tint"></i></center>
 </div>
 
 <div id="zgodovina">
 <div>
   <center><h3><b>Ali ste vedeli?</b></h3></center>
   <p id="pZgodovina" style="font-size: 16px; margin-left:1%">
-    Povprečna velikost nogometnega igrišča v evropi je 7140m², kar predstavlja 105m dolžine in 68m širine. 
+    Pri imperialnih enotah se uporablja za enoto tudi sod (uporabljen za pivo), ki predstavlja 36gal oz. približno 164L. 
   </p>
 </div>
-  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/igrisce.jpg"/></center>
+  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/sod.jpg"/></center>
 <div style="margin-bottom:0%">
   <a href="javascript:;" id="left" onclick="left()" ><i style="color: black; width: 40px; height: 40px; margin-left:2%" class="fas fa-chevron-circle-left"></i></a>
   <a href="javascript:;" id="right" onclick="right()" ><i style="color: black; width: 40px; height: 40px; margin-right:2%; float:right" class="fas fa-chevron-circle-right"></i></a>
@@ -469,12 +469,12 @@ function checkLi(Li){
   }
 }
 //Sod
-var vsebina_zanimivosti = ["Površina Slovenije je 20,273km² in spada med najmanjše države v Evropi.",
-"Povprečna velikost nogometnega igrišča v evropi je 7140m², kar predstavlja 105m dolžine in 68m širine.",
-"Tihi oz. Pacifiški ocean je največji ocean na svetu in pokriva približno 155km² našega planeta."];
-var vsebina_slike = ["pictures/slovenija.png",
-"pictures/igrisce.jpg",
-"pictures/pacific.jpg"];
+var vsebina_zanimivosti = ["Pri imperialnih enotah se uporablja za enoto tudi sod (uporabljen za pivo), ki predstavlja 36gal oz. približno 164L.",
+"Povprečen volumen, ki ga zavzemajo možgani v človeškem telesu je 600 kubičnih centimetrov.",
+"1 milijon zrn sladkorja zavzema približno 50 kubičnih centimetrov prostora."];
+var vsebina_slike = ["pictures/sod.jpg",
+"pictures/brains.jpg",
+"pictures/sladkor.jpg"];
 var pozicija = 0;
 function left(){
   if(pozicija == 0)
