@@ -41,18 +41,11 @@
   <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-dark " id="m_aside_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
   
   <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">	
-    <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-    
+    <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">  
       <br>
         <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
         aria-haspopup="true"><a href="dolzina.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
           <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-ruler"></i><span class="m-menu__link-text"><h4> &nbsp Dolžina</h4></span> <span class="m-menu__link-badge"></span>
-            </span></span></a>
-        </li>
-        <br>
-        <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
-        aria-haspopup="true"><a href="prostornina.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
-          <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-cube"></i><span class="m-menu__link-text"><h4> &nbsp Prostornina</h4></span> <span class="m-menu__link-badge"></span>
             </span></span></a>
         </li>
         <br>
@@ -62,7 +55,12 @@
             </span></span></a>
         </li>
         <br>
-
+        <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
+        aria-haspopup="true"><a href="prostornina.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
+          <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-cube"></i><span class="m-menu__link-text"><h4> &nbsp Prostornina</h4></span> <span class="m-menu__link-badge"></span>
+            </span></span></a>
+        </li>
+        <br>
         <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
         aria-haspopup="true"><a href="temperatura.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
           <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-thermometer-full"></i><span class="m-menu__link-text"><h4> &nbsp Temperatura</h4></span> <span class="m-menu__link-badge"></span>
@@ -383,7 +381,7 @@ function checkCm(cm){
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
     var naslov = document.createTextNode("Najmanjši delec");
-    var text = document.createTextNode("Najmanjši delec v vesolju je atom.");
+    var text = document.createTextNode("Atom velja za enega od najmanjših delcev v vesolju.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);

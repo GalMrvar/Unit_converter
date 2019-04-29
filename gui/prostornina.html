@@ -41,18 +41,11 @@
   <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-dark " id="m_aside_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
   
   <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">	
-    <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-    
+    <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">  
       <br>
         <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
         aria-haspopup="true"><a href="dolzina.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
           <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-ruler"></i><span class="m-menu__link-text"><h4> &nbsp Dolžina</h4></span> <span class="m-menu__link-badge"></span>
-            </span></span></a>
-        </li>
-        <br>
-        <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
-        aria-haspopup="true"><a href="prostornina.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
-          <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-cube"></i><span class="m-menu__link-text"><h4> &nbsp Prostornina</h4></span> <span class="m-menu__link-badge"></span>
             </span></span></a>
         </li>
         <br>
@@ -62,7 +55,12 @@
             </span></span></a>
         </li>
         <br>
-
+        <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
+        aria-haspopup="true"><a href="prostornina.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
+          <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-cube"></i><span class="m-menu__link-text"><h4> &nbsp Prostornina</h4></span> <span class="m-menu__link-badge"></span>
+            </span></span></a>
+        </li>
+        <br>
         <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1"
         aria-haspopup="true"><a href="temperatura.html" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span class="m-menu__link-title"> <span class="m-menu__link-wrap">
           <i style="width:30px; height:30px; color:rgb(233, 148, 20)" class="fas fa-thermometer-full"></i><span class="m-menu__link-text"><h4> &nbsp Temperatura</h4></span> <span class="m-menu__link-badge"></span>
@@ -109,7 +107,7 @@
         onchange="ConvertCe(this.value)"><label  >&nbsp cL</label><br>
         <label style="width:115px;" >Mililiter: &nbsp</label>
         <input id="inputMi" type="number" placeholder="Mililiter"
-        oninput="ConvertMim(this.value)"
+        oninput="ConvertMi(this.value)"
         onchange="ConvertMi(this.value)"><label  >&nbsp mL</label><br>
         <!--<center>
         <i style="color:rgb(233, 148, 20); width:25%; height:60%" class="fas fa-temperature-low"></i></center>  -->
@@ -208,187 +206,214 @@ function ConvertHe(valNum){
     document.getElementById("inputDe").value = liter*10;
     document.getElementById("inputCe").value = liter*10*10;
     document.getElementById("inputMi").value = liter*100*10;
-    var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
-    checkCm(cm); 
+    var ounce = liter*35.195;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    checkLi(liter);  
     //checkKelvin(kelvin);
   }
 }
-function ConvertM(valNum){
+function ConvertLi(valNum){
   if(valNum == ""){
     valNull();
   }
   else{
-    var cm = valNum*100**2;
-    document.getElementById("inputKm").value = valNum/1000**2;
-    document.getElementById("inputDm").value = valNum*10**2;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*100*10**2;
-    //checkKelvin(kelvin);
-    var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
-    checkCm(cm); 
+    var liter = valNum;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    var ounce = liter*35.195;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    checkLi(liter);  
   }
 }
-function ConvertDm(valNum){
+function ConvertDe(valNum){
   if(valNum == ""){
     valNull();
   }
   else{
-    var cm = valNum*10**2;
-    document.getElementById("inputKm").value = valNum/(10*1000)**2;
-    document.getElementById("inputM").value = valNum/10**2;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*(10*10**2);
-    //checkKelvin(kelvin);
-    var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
-    checkCm(cm); 
+    var liter = valNum/10;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputLi").value = liter;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    var ounce = liter*35.195;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    checkLi(liter);  
   }
 }
-function ConvertCm(valNum){
+function ConvertCe(valNum){
   if(valNum === "" ){
     valNull();
   }
   else if(valNum == "abc"){
-    document.getElementById("inputKm").value = 0;
-    document.getElementById("inputM").value = 0;
-    document.getElementById("inputDm").value = 0;
-    document.getElementById("inputCm").value = 0;
-    document.getElementById("inputMm").value = 0;
-    var inch = cm/2.54;
+    document.getElementById("inputHe").value = 0;
+    document.getElementById("inputLi").value = 0;
+    document.getElementById("inputDe").value = 0;
+    document.getElementById("inputCe").value = 0;
     document.getElementById("inputMi").value = 0;
-    document.getElementById("inputJa").value = 0;
-    document.getElementById("inputFt").value = 0;
-    document.getElementById("inputIn").value = 0;
+
+    document.getElementById("inputGa").value = 0;
+    document.getElementById("inputKv").value = 0;
+    document.getElementById("inputPi").value = 0;
+    document.getElementById("inputGi").value = 0;
+    document.getElementById("inputUn").value = 0;
   }
   else{    
-    var cm = valNum;
-    document.getElementById("inputKm").value = valNum/(1000*100**2);
-    document.getElementById("inputM").value = valNum/100**2;
-    document.getElementById("inputDm").value = valNum/10**2;
-    document.getElementById("inputMm").value = valNum*10**2;
-    var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
-    if(cm != 0)
-      checkCm(cm);    
+    var liter = valNum/100;
+    document.getElementById("inputHe").value = liter/100;
+    document.getElementById("inputLi").value = liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    var ounce = liter*35.195;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    if(liter != 0)
+      checkLi(liter);    
   }
 }
-function ConvertMm(valNum){
-  if(valNum === "" ){
-    valNull();
-  }
-  else{    
-    var cm = valNum/10**2;
-    document.getElementById("inputKm").value = valNum/(1000000**2);
-    document.getElementById("inputM").value = valNum/(100*10*10*10*10);
-    document.getElementById("inputDm").value = valNum/(10*10**2);
-    document.getElementById("inputCm").value = cm;   
-    var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
-  }
-}
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function ConvertMi(valNum){
   if(valNum === "" ){
     valNull();
   }
-  else{
-    inch = valNum*(63360**2)
-    document.getElementById("inputJa").value = valNum*(1760**2);
-    document.getElementById("inputFt").value = valNum*(5280**2);
-    document.getElementById("inputIn").value = inch;
-    var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
-    checkCm(cm); 
+  else{   
+    var liter = valNum/1000;
+    document.getElementById("inputHe").value = liter/100;
+    document.getElementById("inputLi").value = liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    var ounce = liter*35.195;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    checkLi(liter);  
   }
 }
-function ConvertJa(valNum){
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function ConvertGa(valNum){
   if(valNum === "" ){
     valNull();
   }
   else{
-    inch = valNum*36**2;   
-    document.getElementById("inputMi").value = valNum/1760**2;
-    document.getElementById("inputFt").value = valNum*3**2;
-    document.getElementById("inputIn").value = inch;
-    var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
-    checkCm(cm);   
+    var ounce = valNum*5*4*2*4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    var liter = ounce/35.195;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputLi").value =  liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    checkLi(liter);  
   }
 }
-function ConvertFt(valNum){
+function ConvertKv(valNum){
   if(valNum === "" ){
     valNull();
   }
   else{
-    inch = valNum*144;   
-    document.getElementById("inputMi").value = valNum/(5280**2);
-    document.getElementById("inputJa").value = valNum/3**2;
-    document.getElementById("inputIn").value = inch;
-    var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
-    checkCm(cm);     
+    var ounce = valNum*5*4*2;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    var liter = ounce/35.195;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputLi").value =  liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    checkLi(liter);   
   }
 }
-function ConvertIn(valNum){
+function ConvertPi(valNum){
   if(valNum === "" ){
     valNull();
   }
   else{
-    var inch = valNum;    
-    document.getElementById("inputMi").value = valNum/63360**2;
-    document.getElementById("inputJa").value = valNum/36**2;
-    document.getElementById("inputFt").value = valNum/12**2;
-    var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
-    checkCm(cm);    
+    var ounce = valNum*5*4;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputUn").value = ounce;
+    var liter = ounce/35.195;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputLi").value =  liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    checkLi(liter);    
   }
 }
-
-function checkCm(cm){
-  if(cm <= 0){
-    ConvertCm("abc");
+function ConvertGi(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    var ounce = valNum*5;
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputUn").value = ounce;
+    var liter = ounce/35.195;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputLi").value =  liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    checkLi(liter);    
+  }
+}
+function ConvertUn(valNum){
+  if(valNum === "" ){
+    valNull();
+  }
+  else{
+    var ounce = valNum
+    document.getElementById("inputGa").value = ounce/5/4/2/4;
+    document.getElementById("inputKv").value = ounce/5/4/2;
+    document.getElementById("inputPi").value = ounce/5/4;
+    document.getElementById("inputGi").value = ounce/5
+    var liter = ounce/35.195;
+    document.getElementById("inputHe").value =  liter/100;
+    document.getElementById("inputLi").value =  liter;
+    document.getElementById("inputDe").value = liter*10;
+    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputMi").value = liter*100*10;
+    checkLi(liter);    
+  }
+}
+function checkLi(Li){
+  if(Li < 0){
+    ConvertCe("abc");
     var paragraph = document.getElementById("zan");
     var Maintitle = document.getElementById("title");
     var title = document.getElementById("zanTitle");
-    if(title.innerHTML == "Velikost znamke")
+    if(title.innerHTML == "Kapljice vode")
       return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Velikost znamke");
-    var text = document.createTextNode("Dimenzija poštne znamke v sloveniji je 42 x 35 mm");
+    var naslov = document.createTextNode("Kapljice vode");
+    var text = document.createTextNode("200ml vode vsebuje 5000 kapljic.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -398,19 +423,18 @@ function checkCm(cm){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-mail-bulk");
+    document.getElementById("zan_icon").classList.add("fa-tint");
   }
-  var meter = cm/100/100;
-  if(meter > 300000 && meter < 500000){
+  if(Li > 45 && Li < 150){
     var paragraph = document.getElementById("zan");
     var title = document.getElementById("zanTitle");
     var Maintitle = document.getElementById("title");
-    if(title.innerHTML == "Najvišja stavba na svetu")
+    if(title.innerHTML == "Volumen povprečnega človeka")
      return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Najvišja stavba na svetu");
-    var text = document.createTextNode("Površina najvišje stavbe na svetu (buri khalifa) je 334.000 m²");
+    var naslov = document.createTextNode("Volumen povprečnega človeka");
+    var text = document.createTextNode("Volumen povprečnega človeškega telesa je 66,5L.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -420,19 +444,18 @@ function checkCm(cm){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-building");
+    document.getElementById("zan_icon").classList.add("fa-male");
   }
-  var km = cm/100/1000/1000/100;
-  if(km >= 3478 ){
+  if(Li >= 2500000 ){
     var paragraph = document.getElementById("zan");
     var title = document.getElementById("zanTitle");
     var Maintitle = document.getElementById("title");
-    if(title.innerHTML == "Površina zemlje")
+    if(title.innerHTML == "Prostornina bazena")
       return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Površina zemlje");
-    var text = document.createTextNode("Površina planeta zemlja znaša 510.100.000 km²");
+    var naslov = document.createTextNode("Prostornina bazena");
+    var text = document.createTextNode("Standardni olimpijski vsebuje 2,5 miljonov litrov vode.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -442,7 +465,7 @@ function checkCm(cm){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-globe-americas");
+    document.getElementById("zan_icon").classList.add("fa-swimming-pool");
   }
 }
 //Sod
