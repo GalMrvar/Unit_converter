@@ -116,7 +116,7 @@
         <br>
         <center> <h2>Imperialne enote</h2></center><br>
         <label style="width:90px;" >Milja: &nbsp</label>
-        <input id="inputMi" type="number" placeholder="Milja"
+        <input id="inputMi" type="number" placeholder="Milja"  
         oninput="ConvertMi(this.value)"
         onchange="ConvertMi(this.value)"><label  >&nbsp ml</label><br>
         <label style="width:90px;" >Jard: &nbsp</label>
@@ -371,7 +371,7 @@ function ConvertIn(valNum){
 }
 
 function checkCm(cm){
-  if(cm <= 0){
+  if(cm < 0){
     ConvertCm("abc");
     var paragraph = document.getElementById("zan");
     var Maintitle = document.getElementById("title");
