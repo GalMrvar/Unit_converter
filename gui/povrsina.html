@@ -73,6 +73,7 @@
             </span></span></a>
         </li>
     </ul>
+    <center><div style="left:50%; transform:translateX(-50%); position:absolute; bottom: 0; color:#ccc;"> 10-16 let</div></center>
   </div>
   <!-- END: Horizontal Menu -->								<!-- BEGIN: Topbar -->
   <div class="box">
@@ -185,6 +186,18 @@
 <script src="js/vendors.bundle.js" type="text/javascript"></script>
 <script src="js/scripts.bundle.js" type="text/javascript"></script>
 <script>
+function roundNumber(num, scale) {
+  if(!("" + num).includes("e")) {
+    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+    } else {
+      var arr = ("" + num).split("e");
+      var sig = ""
+    if(+arr[1] + scale > 0) {
+      sig = "+";
+    }
+  return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+  }
+}   
 function valNull(){
   document.getElementById("inputKm").value = "";
   document.getElementById("inputM").value = "";
@@ -203,15 +216,15 @@ function ConvertKm(valNum){
   }
   else {
     var cm = valNum*1000*100*1000*100;
-    document.getElementById("inputM").value =  valNum*1000*1000;
-    document.getElementById("inputDm").value = valNum*1000*100*1000;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*1000*100*10*1000*100*10;
+    document.getElementById("inputM").value =  roundNumber(valNum*1000*1000,3);
+    document.getElementById("inputDm").value = roundNumber(valNum*1000*100*1000,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(valNum*1000*100*10*1000*100*10,3);
     var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(inch/63360**2,3);
+    document.getElementById("inputJa").value = roundNumber(inch/((12*3)**2),3);
+    document.getElementById("inputFt").value = roundNumber(inch/(12**2),3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     checkCm(cm); 
     //checkKelvin(kelvin);
   }
@@ -222,16 +235,16 @@ function ConvertM(valNum){
   }
   else{
     var cm = valNum*100**2;
-    document.getElementById("inputKm").value = valNum/1000**2;
-    document.getElementById("inputDm").value = valNum*10**2;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*100*10**2;
+    document.getElementById("inputKm").value = roundNumber(valNum/1000**2,3);
+    document.getElementById("inputDm").value = roundNumber(valNum*10**2,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(valNum*100*10**2,3);
     //checkKelvin(kelvin);
     var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(inch/63360**2,3);
+    document.getElementById("inputJa").value = roundNumber(inch/((12*3)**2),3);
+    document.getElementById("inputFt").value = roundNumber(inch/(12**2),3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     checkCm(cm); 
   }
 }
@@ -241,16 +254,16 @@ function ConvertDm(valNum){
   }
   else{
     var cm = valNum*10**2;
-    document.getElementById("inputKm").value = valNum/(10*1000)**2;
-    document.getElementById("inputM").value = valNum/10**2;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*(10*10**2);
+    document.getElementById("inputKm").value = roundNumber(valNum/(10*1000)**2,3);
+    document.getElementById("inputM").value = roundNumber(valNum/10**2,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(valNum*(10*10**2),3);
     //checkKelvin(kelvin);
     var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(inch/63360**2,3);
+    document.getElementById("inputJa").value = roundNumber(inch/((12*3)**2),3);
+    document.getElementById("inputFt").value = roundNumber(inch/(12**2),3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     checkCm(cm); 
   }
 }
@@ -272,15 +285,15 @@ function ConvertCm(valNum){
   }
   else{    
     var cm = valNum;
-    document.getElementById("inputKm").value = valNum/(1000*100**2);
-    document.getElementById("inputM").value = valNum/100**2;
-    document.getElementById("inputDm").value = valNum/10**2;
-    document.getElementById("inputMm").value = valNum*10**2;
+    document.getElementById("inputKm").value = roundNumber(valNum/(1000*100**2),3);
+    document.getElementById("inputM").value = roundNumber(valNum/100**2,3);
+    document.getElementById("inputDm").value = roundNumber(valNum/10**2,3);
+    document.getElementById("inputMm").value = roundNumber(valNum*10**2,3);
     var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(inch/63360**2,3);
+    document.getElementById("inputJa").value = roundNumber(inch/((12*3)**2),3);
+    document.getElementById("inputFt").value = roundNumber(inch/(12**2),3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     if(cm != 0)
       checkCm(cm);    
   }
@@ -291,15 +304,15 @@ function ConvertMm(valNum){
   }
   else{    
     var cm = valNum/10**2;
-    document.getElementById("inputKm").value = valNum/(1000000**2);
-    document.getElementById("inputM").value = valNum/(100*10*10*10*10);
-    document.getElementById("inputDm").value = valNum/(10*10**2);
-    document.getElementById("inputCm").value = cm;   
+    document.getElementById("inputKm").value = roundNumber(valNum/(1000000**2),3);
+    document.getElementById("inputM").value = roundNumber(valNum/(100*10*10*10*10),3);
+    document.getElementById("inputDm").value = roundNumber(valNum/(10*10**2),3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);   
     var inch = cm/6.4516;
-    document.getElementById("inputMi").value = inch/63360**2;
-    document.getElementById("inputJa").value = inch/((12*3)**2);
-    document.getElementById("inputFt").value = inch/(12**2);
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(inch/63360**2,3);
+    document.getElementById("inputJa").value = roundNumber(inch/((12*3)**2),3);
+    document.getElementById("inputFt").value = roundNumber(inch/(12**2),3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
   }
 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -309,15 +322,15 @@ function ConvertMi(valNum){
   }
   else{
     inch = valNum*(63360**2)
-    document.getElementById("inputJa").value = valNum*(1760**2);
-    document.getElementById("inputFt").value = valNum*(5280**2);
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputJa").value = roundNumber(valNum*(1760**2),3);
+    document.getElementById("inputFt").value = roundNumber(valNum*(5280**2),3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
+    document.getElementById("inputKm").value = roundNumber(cm/(1000*100*100*1000),3);
+    document.getElementById("inputM").value = roundNumber(cm/(100*100),3);
+    document.getElementById("inputDm").value = roundNumber(cm/100,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(cm*100,3);
     checkCm(cm); 
   }
 }
@@ -327,15 +340,15 @@ function ConvertJa(valNum){
   }
   else{
     inch = valNum*36**2;   
-    document.getElementById("inputMi").value = valNum/1760**2;
-    document.getElementById("inputFt").value = valNum*3**2;
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(valNum/1760**2,3);
+    document.getElementById("inputFt").value = roundNumber(valNum*3**2,3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
+    document.getElementById("inputKm").value = roundNumber(cm/(1000*100*100*1000),3);
+    document.getElementById("inputM").value = roundNumber(cm/(100*100),3);
+    document.getElementById("inputDm").value = roundNumber(cm/100,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(cm*100,3);
     checkCm(cm);   
   }
 }
@@ -345,15 +358,15 @@ function ConvertFt(valNum){
   }
   else{
     inch = valNum*144;   
-    document.getElementById("inputMi").value = valNum/(5280**2);
-    document.getElementById("inputJa").value = valNum/3**2;
-    document.getElementById("inputIn").value = inch;
+    document.getElementById("inputMi").value = roundNumber(valNum/(5280**2),3);
+    document.getElementById("inputJa").value = roundNumber(valNum/3**2,3);
+    document.getElementById("inputIn").value = roundNumber(inch,3);
     var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
+    document.getElementById("inputKm").value = roundNumber(cm/(1000*100*100*1000),3);
+    document.getElementById("inputM").value = roundNumber(cm/(100*100),3);
+    document.getElementById("inputDm").value = roundNumber(cm/100,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(cm*100,3);
     checkCm(cm);     
   }
 }
@@ -363,15 +376,15 @@ function ConvertIn(valNum){
   }
   else{
     var inch = valNum;    
-    document.getElementById("inputMi").value = valNum/63360**2;
-    document.getElementById("inputJa").value = valNum/36**2;
-    document.getElementById("inputFt").value = valNum/12**2;
+    document.getElementById("inputMi").value = roundNumber(valNum/63360**2,3);
+    document.getElementById("inputJa").value = roundNumber(valNum/36**2,3);
+    document.getElementById("inputFt").value = roundNumber(valNum/12**2,3);
     var cm = inch*6.4516;
-    document.getElementById("inputKm").value = cm/(1000*100*100*1000);
-    document.getElementById("inputM").value = cm/(100*100);
-    document.getElementById("inputDm").value = cm/100;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*100;
+    document.getElementById("inputKm").value = roundNumber(cm/(1000*100*100*1000),3);
+    document.getElementById("inputM").value = roundNumber(cm/(100*100),3);
+    document.getElementById("inputDm").value = roundNumber(cm/100,3);
+    document.getElementById("inputCm").value = roundNumber(cm,3);
+    document.getElementById("inputMm").value = roundNumber(cm*100,3);
     checkCm(cm);    
   }
 }

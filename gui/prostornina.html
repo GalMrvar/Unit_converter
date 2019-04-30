@@ -73,6 +73,7 @@
             </span></span></a>
         </li>
     </ul>
+    <center><div style="left:50%; transform:translateX(-50%); position:absolute; bottom: 0; color:#ccc;"> 10-16 let</div></center>
   </div>
   <!-- END: Horizontal Menu -->								<!-- BEGIN: Topbar -->
   <div class="box">
@@ -189,6 +190,18 @@
 <script src="js/vendors.bundle.js" type="text/javascript"></script>
 <script src="js/scripts.bundle.js" type="text/javascript"></script>
 <script>
+  function roundNumber(num, scale) {
+  if(!("" + num).includes("e")) {
+    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+    } else {
+      var arr = ("" + num).split("e");
+      var sig = ""
+    if(+arr[1] + scale > 0) {
+      sig = "+";
+    }
+  return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+  }
+}   
 function valNull(){
   document.getElementById("inputHe").value = "";
   document.getElementById("inputLi").value = "";
@@ -208,16 +221,16 @@ function ConvertHe(valNum){
   }
   else {
     var liter = valNum*100;
-    document.getElementById("inputLi").value =  liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     var ounce = liter*35.195;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     checkLi(liter);  
     //checkKelvin(kelvin);
   }
@@ -228,16 +241,16 @@ function ConvertLi(valNum){
   }
   else{
     var liter = valNum;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value =  roundNumber(liter/100,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     var ounce = liter*35.195;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     checkLi(liter);  
   }
 }
@@ -247,16 +260,16 @@ function ConvertDe(valNum){
   }
   else{
     var liter = valNum/10;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputLi").value = liter;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     var ounce = liter*35.195;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     checkLi(liter);  
   }
 }
@@ -279,16 +292,16 @@ function ConvertCe(valNum){
   }
   else{    
     var liter = valNum/100;
-    document.getElementById("inputHe").value = liter/100;
-    document.getElementById("inputLi").value = liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     var ounce = liter*35.195;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     if(liter != 0)
       checkLi(liter);    
   }
@@ -299,16 +312,16 @@ function ConvertMi(valNum){
   }
   else{   
     var liter = valNum/1000;
-    document.getElementById("inputHe").value = liter/100;
-    document.getElementById("inputLi").value = liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
     var ounce = liter*35.195;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     checkLi(liter);  
   }
 }
@@ -319,16 +332,16 @@ function ConvertGa(valNum){
   }
   else{
     var ounce = valNum*5*4*2*4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     var liter = ounce/35.195;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputLi").value =  liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     checkLi(liter);  
   }
 }
@@ -338,16 +351,16 @@ function ConvertKv(valNum){
   }
   else{
     var ounce = valNum*5*4*2;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     var liter = ounce/35.195;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputLi").value =  liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     checkLi(liter);   
   }
 }
@@ -357,16 +370,16 @@ function ConvertPi(valNum){
   }
   else{
     var ounce = valNum*5*4;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputGi").value = ounce/5
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     var liter = ounce/35.195;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputLi").value =  liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     checkLi(liter);    
   }
 }
@@ -376,16 +389,16 @@ function ConvertGi(valNum){
   }
   else{
     var ounce = valNum*5;
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputUn").value = ounce;
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputUn").value = roundNumber(ounce,3);
     var liter = ounce/35.195;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputLi").value =  liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     checkLi(liter);    
   }
 }
@@ -395,16 +408,16 @@ function ConvertUn(valNum){
   }
   else{
     var ounce = valNum
-    document.getElementById("inputGa").value = ounce/5/4/2/4;
-    document.getElementById("inputKv").value = ounce/5/4/2;
-    document.getElementById("inputPi").value = ounce/5/4;
-    document.getElementById("inputGi").value = ounce/5
+    document.getElementById("inputGa").value = roundNumber(ounce/5/4/2/4,3);
+    document.getElementById("inputKv").value = roundNumber(ounce/5/4/2,3);
+    document.getElementById("inputPi").value = roundNumber(ounce/5/4,3);
+    document.getElementById("inputGi").value = roundNumber(ounce/5,3);
     var liter = ounce/35.195;
-    document.getElementById("inputHe").value =  liter/100;
-    document.getElementById("inputLi").value =  liter;
-    document.getElementById("inputDe").value = liter*10;
-    document.getElementById("inputCe").value = liter*10*10;
-    document.getElementById("inputMi").value = liter*100*10;
+    document.getElementById("inputHe").value = roundNumber(liter/100,3);
+    document.getElementById("inputLi").value = roundNumber(liter,3);
+    document.getElementById("inputDe").value = roundNumber(liter*10,3);
+    document.getElementById("inputCe").value = roundNumber(liter*10*10,3);
+    document.getElementById("inputMi").value = roundNumber(liter*100*10,3);
     checkLi(liter);    
   }
 }

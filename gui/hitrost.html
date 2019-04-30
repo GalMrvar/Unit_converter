@@ -73,6 +73,7 @@
             </span></span></a>
         </li>
     </ul>
+    <center><div style="left:50%; transform:translateX(-50%); position:absolute; bottom: 0; color:#ccc;"> 10-16 let</div></center>
   </div>
   <!-- END: Horizontal Menu -->								<!-- BEGIN: Topbar -->
   <div class="box">
@@ -108,7 +109,7 @@
         <br>
         <center> <h2>Ostale</h2></center><br>
         <label style="width:110px;">Milja: </label>
-        <input  id="inputMi" type="number" placeholder="Milja na uro"
+        <input  id="inputMi" type="number" placeholder="Milja na uro" step=".01"
         oninput="ConvertMi(this.value)"
         onchange="ConvertMi(this.value)">
         <label>mph</label>
@@ -123,7 +124,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <img style="width:900px; height: 500px;"src="pictures/celsiusMap.png">
+    <img style="width:900px; height: 500px;"src="pictures/speedMap.png">
   </div>
 </div>
 
@@ -140,10 +141,10 @@
 <div>
   <center><h3><b>Ali ste vedeli?</b></h3></center>
   <p id="pZgodovina" style="font-size: 16px; margin-left:1%">
-      Najbolj mrzel naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli -50℃. 
+    Sloni lahko dosežejo hitrost teka tudi do 40 kilometrov na uro oziroma 25mph. 
   </p>
 </div>
-  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/russian_flag.png"/></center>
+  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/slon.jpg"/></center>
 <div style="margin-bottom:0%">
   <a href="javascript:;" id="left" onclick="left()" ><i style="color: black; width: 40px; height: 40px; margin-left:2%" class="fas fa-chevron-circle-left"></i></a>
   <a href="javascript:;" id="right" onclick="right()" ><i style="color: black; width: 40px; height: 40px; margin-right:2%; float:right" class="fas fa-chevron-circle-right"></i></a>
@@ -160,6 +161,18 @@
 <script src="js/vendors.bundle.js" type="text/javascript"></script>
 <script src="js/scripts.bundle.js" type="text/javascript"></script>
 <script>
+  function roundNumber(num, scale) {
+  if(!("" + num).includes("e")) {
+    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+  } else {
+    var arr = ("" + num).split("e");
+    var sig = ""
+    if(+arr[1] + scale > 0) {
+      sig = "+";
+    }
+    return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+  }
+}
 function valNull(){
   document.getElementById("inputKm").value = "";
   document.getElementById("inputMi").value = "";
@@ -173,7 +186,8 @@ function ConvertKm(valNum){
     document.getElementById("inputKm").value = 0;
   }
   else {
-    document.getElementById("inputMi").value = valNum/1.609344;
+    document.getElementById("inputMi").value = roundNumber(valNum/1.609344,3);
+    //document.getElementById("inputMi").value = Math.round(valNum/1.609344);
     checkKm(valNum); 
   }
 }
@@ -184,7 +198,7 @@ function ConvertMi(valNum){
     valNull();
   }
   else{
-    document.getElementById("inputKm").value = valNum*1.609344;
+    document.getElementById("inputKm").value = roundNumber(valNum*1.609344,3);
     checkKm(valNum); 
   }
 }
@@ -256,13 +270,13 @@ function checkKm(km){
     document.getElementById("zan_icon").classList.add("fa-rocket");
   }
 }
-//Najbolj mrzel stalno naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli 50 stopinj pod ničlo.
+
 var vsebina_zanimivosti = ["Sloni lahko dosežejo hitrost teka tudi do 40 kilometrov na uro oziroma 25mph.",
-"Delfini lahko v vodi dosežejo hitrost 60km/h oziroma 37mph.",
-"Povprečen človek v življenju prehodi razdaljo, ki je enaka kot, če bi prehodil 2x okoli sveta."];
-var vsebina_slike = ["pictures/Kzid.jpg",
-"pictures/zila.png",
-"pictures/world.jpg"];
+"Svetloba potuje s svetlobno hitrostjo kar predstavlja 299 792 458 m/s oziroma 107925284,8 km/h. ",
+"Delfini lahko v vodi dosežejo hitrost 60 kilometrov na uro oziroma 37mph."];
+var vsebina_slike = ["pictures/slon.jpg",
+"pictures/svetloba.jpg",
+"pictures/delfin.jpg"];
 var pozicija = 0;
 function left(){
   if(pozicija == 0)
