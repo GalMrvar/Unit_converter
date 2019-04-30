@@ -1,4 +1,4 @@
-<h1>Pretvornik enot</h1>
+<h1>Unit converter</h1>
 <h2>Features:</h2>
 <ul>
   <li>Example 1</li>
