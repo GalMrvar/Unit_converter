@@ -22,7 +22,7 @@
   <div class="m-stack__item m-brand  m-brand--skin-dark ">
     <div class="m-stack m-stack--ver m-stack--general">
       <div class="m-stack__item m-stack__item--middle m-brand__logo">
-        <h1 style="text-align:left; color:rgb(233, 148, 20);">Dolžina</h1>
+        <h1 style="text-align:left; color:rgb(233, 148, 20);">Hitrost</h1>
       </div>
       <div class="m-stack__item m-stack__item--middle m-brand__tools">
           <!-- END -->
@@ -90,53 +90,28 @@
 	</div>
 </header>
 <a href="javascript:;" id="openMap"><i style="width:90px; height:90px; color:#088AD1; float:right; padding-right: 3%;"class="fas fa-globe-americas"></i></a>
-<div style="height:50%;" class="container-fluid">
+<div class="container-fluid">
   <div class="row">
       <div class="col-sm-6">
         <br>
-        <center><h2>Metrične enote (SI)</h2></center><br>
-        <label style="width:115px;" >Kilometer: &nbsp</label>
-        <input id="inputKm" type="number" placeholder="Kilometer"
+        <h2>Osnovna enota v Sloveniji</h2><br>
+        <label style="float:left" >Kilometer: &nbsp</label>
+        <input id="inputKm" type="number" placeholder="Kilometer na uro"
         oninput="ConvertKm(this.value)"
-        onchange="ConvertKm(this.value)"><label  >&nbsp km</label><br>
-        <label style="width:115px;" >Meter: &nbsp</label>
-        <input id="inputM" type="number" placeholder="Meter"
-        oninput="ConvertM(this.value)"
-        onchange="ConvertM(this.value)"><label  >&nbsp m</label><br>
-        <label style="width:115px;" >Decimeter: &nbsp</label>
-        <input id="inputDm" type="number" placeholder="Decimeter"
-        oninput="ConvertDm(this.value)"
-        onchange="ConvertDm(this.value)"><label  >&nbsp dm</label><br>
-        <label style="width:115px;" >Centimeter: &nbsp</label>
-        <input id="inputCm" type="number" placeholder="Centimeter"
-        oninput="ConvertCm(this.value)"
-        onchange="ConvertCm(this.value)"><label  >&nbsp cm</label><br>
-        <label style="width:115px;" >Milimeter: &nbsp</label>
-        <input id="inputMm" type="number" placeholder="Milimeter"
-        oninput="ConvertMm(this.value)"
-        onchange="ConvertMm(this.value)"><label  >&nbsp mm</label><br>
+        onchange="ConvertKm(this.value)">
+        <label>km/h</label>
+        <br><br>
         <!--<center>
         <i style="color:rgb(233, 148, 20); width:25%; height:60%" class="fas fa-temperature-low"></i></center>  -->
         </div>
       <div class="col-sm-6">
         <br>
-        <center> <h2>Imperialne enote</h2></center><br>
-        <label style="width:90px;" >Milja: &nbsp</label>
-        <input id="inputMi" type="number" placeholder="Milja"  
+        <center> <h2>Ostale</h2></center><br>
+        <label style="width:110px;">Milja: </label>
+        <input  id="inputMi" type="number" placeholder="Milja na uro"
         oninput="ConvertMi(this.value)"
-        onchange="ConvertMi(this.value)"><label  >&nbsp ml</label><br>
-        <label style="width:90px;" >Jard: &nbsp</label>
-        <input id="inputJa" type="number" placeholder="Jard"
-        oninput="ConvertJa(this.value)"
-        onchange="ConvertJa(this.value)"><label  >&nbsp yd</label><br>
-        <label style="width:90px;" >Čevelj: &nbsp</label>
-        <input id="inputFt" type="number" placeholder="Čevelj"
-        oninput="ConvertFt(this.value)"
-        onchange="ConvertFt(this.value)"><label  >&nbsp ft</label><br>
-        <label style="width:90px;" >Palec: &nbsp</label>
-        <input id="inputIn" type="number" placeholder="Palec"
-        oninput="ConvertIn(this.value)"
-        onchange="ConvertIn(this.value)"><label  >&nbsp in</label><br>
+        onchange="ConvertMi(this.value)">
+        <label>mph</label>
       </div> 
 </div>
 </div>
@@ -148,7 +123,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <img style="width:900px; height: 500px;"src="pictures/metricMap.png">
+    <img style="width:900px; height: 500px;"src="pictures/celsiusMap.png">
   </div>
 </div>
 
@@ -156,19 +131,19 @@
 <hr>
 <div id="zanimivost" style="width:50%; float: left;">
  <center><h3 ><b id="title">Zanimivost:</b></h3></center>
- <center><h4 id="zanTitle">Slovenska obala</h4></center>
- <center><p id="zan" style="font-size: 16px; margin-left:1%;">Dolžina slovenske obale je 43,157m.</p></center>
- <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-umbrella-beach"></i></center>
+ <center><h4 id="zanTitle">Najhitrejši avto</h4></center>
+ <center><p id="zan" style="font-size: 16px; margin-left:1%;">Najhitrejši avto na svetu lahko doseže hitrost 484km/h.</p></center>
+ <center><i id="zan_icon" style=" width: 100px; height: 100px" class="fas fa-car"></i></center>
 </div>
 
 <div id="zgodovina">
 <div>
   <center><h3><b>Ali ste vedeli?</b></h3></center>
   <p id="pZgodovina" style="font-size: 16px; margin-left:1%">
-    Kitajski zid, ki je spada na seznam svetovnih čudes meri 21,196km. 
+      Najbolj mrzel naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli -50℃. 
   </p>
 </div>
-  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/Kzid.jpg"/></center>
+  <center><img width="150px" height="100px" id="slika_Zgodovina" style="border:1px solid rgb(233, 148, 20);" src="pictures/russian_flag.png"/></center>
 <div style="margin-bottom:0%">
   <a href="javascript:;" id="left" onclick="left()" ><i style="color: black; width: 40px; height: 40px; margin-left:2%" class="fas fa-chevron-circle-left"></i></a>
   <a href="javascript:;" id="right" onclick="right()" ><i style="color: black; width: 40px; height: 40px; margin-right:2%; float:right" class="fas fa-chevron-circle-right"></i></a>
@@ -187,207 +162,45 @@
 <script>
 function valNull(){
   document.getElementById("inputKm").value = "";
-  document.getElementById("inputM").value = "";
-  document.getElementById("inputDm").value = "";
-  document.getElementById("inputCm").value = "";
-  document.getElementById("inputMm").value = "";
-
   document.getElementById("inputMi").value = "";
-  document.getElementById("inputJa").value = "";
-  document.getElementById("inputFt").value = "";
-  document.getElementById("inputIn").value = "";
 }
 function ConvertKm(valNum){
   if(valNum == ""){
     valNull();
   }
-  else {
-    var cm = valNum*1000*100;
-    document.getElementById("inputM").value = valNum*1000;
-    document.getElementById("inputDm").value = valNum*1000*10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*1000*100*10;
-    var inch = cm/2.54;
-    document.getElementById("inputMi").value = inch/63360;
-    document.getElementById("inputJa").value = inch/12/3;
-    document.getElementById("inputFt").value = inch/12;
-    document.getElementById("inputIn").value = inch;
-    checkCm(cm); 
-    //checkKelvin(kelvin);
-  }
-}
-function ConvertM(valNum){
-  if(valNum == ""){
-    valNull();
-  }
-  else{
-    var cm = valNum*100;
-    document.getElementById("inputKm").value = valNum/1000;
-    document.getElementById("inputDm").value = valNum*10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*100*10;
-    //checkKelvin(kelvin);
-    var inch = cm/2.54;
-    document.getElementById("inputMi").value = inch/63360;
-    document.getElementById("inputJa").value = inch/12/3;
-    document.getElementById("inputFt").value = inch/12;
-    document.getElementById("inputIn").value = inch;
-    checkCm(cm); 
-  }
-}
-function ConvertDm(valNum){
-  if(valNum == ""){
-    valNull();
-  }
-  else{
-    var cm = valNum*10;
-    document.getElementById("inputKm").value = valNum/10/1000;
-    document.getElementById("inputM").value = valNum/10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = valNum*10*10;
-    //checkKelvin(kelvin);
-    var inch = cm/2.54;
-    document.getElementById("inputMi").value = inch/63360;
-    document.getElementById("inputJa").value = inch/12/3;
-    document.getElementById("inputFt").value = inch/12;
-    document.getElementById("inputIn").value = inch;
-    checkCm(cm); 
-  }
-}
-function ConvertCm(valNum){
-  if(valNum === "" ){
-    valNull();
-  }
   else if(valNum == "abc"){
-    document.getElementById("inputKm").value = 0;
-    document.getElementById("inputM").value = 0;
-    document.getElementById("inputDm").value = 0;
-    document.getElementById("inputCm").value = 0;
-    document.getElementById("inputMm").value = 0;
-    var inch = cm/2.54;
     document.getElementById("inputMi").value = 0;
-    document.getElementById("inputJa").value = 0;
-    document.getElementById("inputFt").value = 0;
-    document.getElementById("inputIn").value = 0;
+    document.getElementById("inputKm").value = 0;
   }
-  else{    
-    var cm = valNum;
-    document.getElementById("inputKm").value = valNum/1000/100;
-    document.getElementById("inputM").value = valNum/100;
-    document.getElementById("inputDm").value = valNum/10;
-    document.getElementById("inputMm").value = valNum*10;
-    var inch = cm/2.54;
-    document.getElementById("inputMi").value = inch/63360;
-    document.getElementById("inputJa").value = inch/12/3;
-    document.getElementById("inputFt").value = inch/12;
-    document.getElementById("inputIn").value = inch;
-    if(cm != 0)
-      checkCm(cm);    
+  else {
+    document.getElementById("inputMi").value = valNum/1.609344;
+    checkKm(valNum); 
   }
 }
-function ConvertMm(valNum){
-  if(valNum === "" ){
-    valNull();
-  }
-  else{    
-    var cm = valNum/10;
-    document.getElementById("inputKm").value = valNum/10/100/1000;
-    document.getElementById("inputM").value = valNum/100/10;
-    document.getElementById("inputDm").value = valNum/10/10;
-    document.getElementById("inputCm").value = cm;   
-    var inch = cm/2.54;
-    document.getElementById("inputMi").value = inch/63360;
-    document.getElementById("inputJa").value = inch/12/3;
-    document.getElementById("inputFt").value = inch/12;
-    document.getElementById("inputIn").value = inch; 
-  }
-}
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function ConvertMi(valNum){
   if(valNum === "" ){
     valNull();
   }
   else{
-    inch = valNum*63360
-    document.getElementById("inputJa").value = valNum*1760;
-    document.getElementById("inputFt").value = valNum*5280;
-    document.getElementById("inputIn").value = inch ;
-    var cm = inch*2.54;
-    document.getElementById("inputKm").value = cm/(1000*100);
-    document.getElementById("inputM").value = cm/100;
-    document.getElementById("inputDm").value = cm/10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10;
-    checkCm(cm); 
-  }
-}
-function ConvertJa(valNum){
-  if(valNum === "" ){
-    valNull();
-  }
-  else{
-    inch = valNum*36;   
-    document.getElementById("inputMi").value = valNum/1760;
-    document.getElementById("inputFt").value = valNum*3;
-    document.getElementById("inputIn").value = inch;
-    var cm = inch*2.54;
-    document.getElementById("inputKm").value = cm/(1000*100);
-    document.getElementById("inputM").value = cm/100;
-    document.getElementById("inputDm").value = cm/10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10; 
-    checkCm(cm);    
-  }
-}
-function ConvertFt(valNum){
-  if(valNum === "" ){
-    valNull();
-  }
-  else{
-    inch = valNum*12;   
-    document.getElementById("inputMi").value = valNum/5280;
-    document.getElementById("inputJa").value = valNum/3;
-    document.getElementById("inputIn").value = inch;
-    var cm = inch*2.54;
-    document.getElementById("inputKm").value = cm/(1000*100);
-    document.getElementById("inputM").value = cm/100;
-    document.getElementById("inputDm").value = cm/10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10;
-    checkCm(cm);     
-  }
-}
-function ConvertIn(valNum){
-  if(valNum === "" ){
-    valNull();
-  }
-  else{
-    var inch = valNum;    
-    document.getElementById("inputMi").value = valNum/63360;
-    document.getElementById("inputJa").value = valNum/36;
-    document.getElementById("inputFt").value = valNum/12;
-    var cm = inch*2.54;
-    document.getElementById("inputKm").value = cm/(1000*100);
-    document.getElementById("inputM").value = cm/100;
-    document.getElementById("inputDm").value = cm/10;
-    document.getElementById("inputCm").value = cm;
-    document.getElementById("inputMm").value = cm*10;
-    checkCm(cm);     
+    document.getElementById("inputKm").value = valNum*1.609344;
+    checkKm(valNum); 
   }
 }
 
-function checkCm(cm){
-  if(cm < 0){
-    ConvertCm("abc");
+function checkKm(km){
+  if(km < 0){
+    ConvertKm("abc");
     var paragraph = document.getElementById("zan");
     var Maintitle = document.getElementById("title");
     var title = document.getElementById("zanTitle");
-    if(title.innerHTML == "Najmanjši delec")
+    if(title.innerHTML == "Hitrost snežinke")
       return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Najmanjši delec");
-    var text = document.createTextNode("Atom velja za enega od najmanjših delcev v vesolju.");
+    var naslov = document.createTextNode("Hitrost snežinke");
+    var text = document.createTextNode("Snežinke padajo s hitrostijo od 1,7 do 4,1 km/h.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -397,19 +210,19 @@ function checkCm(cm){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-atom");
+    document.getElementById("zan_icon").classList.add("fa-snowflake");
   }
-  var meter = cm/100;
-  if(meter > 30000 && meter < 50000){
+
+  if(km > 350 && km < 550){
     var paragraph = document.getElementById("zan");
     var title = document.getElementById("zanTitle");
     var Maintitle = document.getElementById("title");
-    if(title.innerHTML == "Slovenska obala")
+    if(title.innerHTML == "Najhitrejši avto")
      return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Slovenska obala");
-    var text = document.createTextNode("Dolžina slovenske obale je 43,157m.");
+    var naslov = document.createTextNode("Najhitrejši avto");
+    var text = document.createTextNode("Najhitrejši avto na svetu lahko doseže hitrost 484km/h.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -419,19 +232,18 @@ function checkCm(cm){
       document.getElementById("zan_icon").classList.remove(element);
     });
     document.getElementById("zan_icon").classList.add("fas");
-    document.getElementById("zan_icon").classList.add("fa-umbrella-beach");
+    document.getElementById("zan_icon").classList.add("fa-car");
   }
-  var km = cm/100/1000;
-  if(km >= 3478 ){
+  if(km >= 200000 ){
     var paragraph = document.getElementById("zan");
     var title = document.getElementById("zanTitle");
     var Maintitle = document.getElementById("title");
-    if(title.innerHTML == "Premer lune")
+    if(title.innerHTML == "Najhitrejša raketa")
       return;
     if(Maintitle.innerHTML != "Zanimivost:")
       Maintitle.innerHTML ="Zanimivost:";
-    var naslov = document.createTextNode("Premer lune");
-    var text = document.createTextNode("Premer lune znaša 3476km.");
+    var naslov = document.createTextNode("Najhitrejša raketa");
+    var text = document.createTextNode("Najhitrejša raketa na svetu je vzletela s hitrostjo 265.541km/h.");
     title.innerHTML ="";
     paragraph.innerHTML ="";
     title.appendChild(naslov);
@@ -440,13 +252,13 @@ function checkCm(cm){
     c.forEach(function(element) {
       document.getElementById("zan_icon").classList.remove(element);
     });
-    document.getElementById("zan_icon").classList.add("far");
-    document.getElementById("zan_icon").classList.add("fa-moon");
+    document.getElementById("zan_icon").classList.add("fas");
+    document.getElementById("zan_icon").classList.add("fa-rocket");
   }
 }
 //Najbolj mrzel stalno naseljen kraj na svetu je ruska vasica Oymyakon, kjer je povprečna temperatura v januarju okoli 50 stopinj pod ničlo.
-var vsebina_zanimivosti = ["Kitajski zid, ki je spada na seznam svetovnih čudes meri 21,196km.",
-"Človesko telo vsebuje 96000 km žil, kar pomeni da bi jih okoli zemlje ovili kar 2x.",
+var vsebina_zanimivosti = ["Sloni lahko dosežejo hitrost teka tudi do 40 kilometrov na uro oziroma 25mph.",
+"Delfini lahko v vodi dosežejo hitrost 60km/h oziroma 37mph.",
 "Povprečen človek v življenju prehodi razdaljo, ki je enaka kot, če bi prehodil 2x okoli sveta."];
 var vsebina_slike = ["pictures/Kzid.jpg",
 "pictures/zila.png",
