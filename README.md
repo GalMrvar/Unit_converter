@@ -1,13 +1,4 @@
 <h1>Unit converter</h1>
-<h2>Features:</h2>
-<ul>
-  <li>Example 1</li>
-  <li>Example 2</li>
-  <li>Example 3</li>
-</ul>
-<h2>Quick tips:</h2>
-<ul>
-  <li>Open PowerShell and run: npm install and then npm start</li>
-  <li>Example 2</li>
-  <li>Example 3</li>
-</ul>
+Project was made as a part of the subject for User Interfaces at University of Ljubljana, Faculty of Computer and Information science Slovenia.
+
+Application allows you convert units between metric and imperial system. 
